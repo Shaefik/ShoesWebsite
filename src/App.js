@@ -5,6 +5,8 @@ import Count from './Components/Count';
 import Counter from './Components/Counter';
 
 import Navbar from './Components/Navbar'
+import InputField from './Components/InputField';
+import Sample from './Components/Sample'
 
 
 
@@ -14,8 +16,11 @@ function App() {
       
     <Navbar/>
     {/* <Factorial/> */}
-    <Count/>
-    <Counter />
+    {/* <Count/> */}
+    {/* <Counter /> */}
+    <InputField />
+    {/* <Sample/> */}
+    
     
      
       
