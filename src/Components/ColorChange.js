@@ -1,5 +1,5 @@
 import {useState} from 'react';
-function Home(){
+function ColorChange(){
     const [color,setColor] = useState("orange")
 
     function greenBtn(){
@@ -28,4 +28,4 @@ function Home(){
         
     )
 }
-export default Home
+export default ColorChange

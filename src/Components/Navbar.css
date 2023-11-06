@@ -13,9 +13,7 @@
     padding-top: 20px;
    
 }
-#navbarDropdownMenuLink{
-  color: aliceblue;
-}
+
 .home{
     
     margin-left: 20px;
@@ -40,16 +38,6 @@
 .project:hover{
     color:#fbfbfc ;
 }
-.dropdown-content{
-    color: white;
-    /* background-color: rgb(134, 132, 132); */
-    background-color: crimson;
-    width: fit-content;
-    margin-top: 25px;
-    margin-left: 320px;
-    padding-left: 30px;
-    
-}
 
 li{
     list-style-type: none;
@@ -60,4 +48,15 @@ li a {
 }
 li a:hover{
     color: #f3d1d1;
+}
+
+.link-container{
+  margin-left: 320px;
+
+  width: fit-content;
+  background-color: rgb(233, 227, 227);
+  margin-top: 28px;
+}
+.links{
+    color: #b29dd4;
 }
