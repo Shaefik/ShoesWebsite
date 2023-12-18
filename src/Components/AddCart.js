@@ -83,7 +83,7 @@ function AddCart() {
       <br></br>
       <button onClick={addItem}>Add New Item</button>
 
-      <table className="table table-dark">
+      <table  >
         <thead>
           <tr>
             <th>ID</th>

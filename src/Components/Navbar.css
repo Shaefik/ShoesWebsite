@@ -45,9 +45,12 @@ li{
 }
 li a {
     color: aliceblue;
+    text-decoration: none;
+   
 }
 li a:hover{
     color: #f3d1d1;
+    
 }
 
 .link-container{
