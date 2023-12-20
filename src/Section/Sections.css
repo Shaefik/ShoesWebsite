@@ -1,0 +1,40 @@
+.section-right{
+    width: 80%;
+    margin: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.item {
+    width: calc(25% - 20px);
+    height: 400px; /* 3 items per row, adjust margin as needed */
+    margin: 10px; /* Adjust margin as needed */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    border: 0.5px solid lightgrey;
+  }
+  .section-img {
+    width: 100%; /* Make the image fill the container */
+    height: 200px; /* Maintain aspect ratio */
+  }
+  .section-btn {
+    padding: 8px;
+    margin-top: 10px;
+    background-color: black;
+    height: 40px;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  .section-price{
+    margin: 5px 0;
+    font-weight: 610;
+  }
+  .section-size{
+    margin: 5px 0;
+    
+  }
+  .men-container {
+    display: flex;
+  }

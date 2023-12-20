@@ -1,65 +1,85 @@
-.tag{
-    color: rgb(230, 236, 241);
-    font-size: 30px;
-    font-family: Arial, Helvetica, sans-serif;
-    margin-left: 7px;
-   
-    
-}
-.navbar-container{
-    width: 100%;
-    height: 90px;
-    background-color: #563d7c;
-    padding-top: 20px;
-   
+.navbar-head {
+  position: relative;
+  width: 100%;
+  height: 85px;
+  background-color: #fdfafa;
+  display: flex;
+ 
+  
+  align-items: center;
 }
 
-.home{
-    
-    margin-left: 20px;
-    color: #cbbde2;
-}
-.home:hover{
-    color: #fbfbfc;
+span {
+  color: red;
 }
 
-.menu {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
+.search-box {
+  display: flex;
+  align-items: center;
+
 }
 
-
-.project{
-    margin-left: 29px;
-    color: #cbbde2;
-}
-.project:hover{
-    color:#fbfbfc ;
-}
-
-li{
-    list-style-type: none;
-    
-}
-li a {
-    color: aliceblue;
-    text-decoration: none;
-   
-}
-li a:hover{
-    color: #f3d1d1;
-    
+.search-box input {
+  width: 150px;
+  height: 30px;
+  margin-left: 10px; /* Adjust the margin as needed */
+  padding: 5px;
+  border: 1px solid black;
 }
 
-.link-container{
-  margin-left: 320px;
+.search-box button {
+  width: 100px;
+  height: 30px;
+  color: white;
+  background-color: black;
+  border: none;
+  cursor: pointer;
+}
 
-  width: fit-content;
-  background-color: rgb(233, 227, 227);
-  margin-top: 28px;
+.head {
+  color: rgb(202, 20, 20);
+  font-weight: bold;
+  font-size: 24px;
+  
+
+  padding: 10px; /* Adjust padding as needed */
+}
+
+.tags {
+  text-decoration: none;
+  list-style-type: none;
+  margin-left: 20px;
+
+
+  display: flex;
+  margin-top: 10px;
 }
 .links{
-    color: #b29dd4;
+  color: black;
+  font-family:'lato-bold' ;
+  margin-left: 10px;
+  font-weight:1000 ;
+  padding: 5px;
+  text-decoration: none;
+  list-style-type: none;
+}
+.links:hover{
+  color: rgb(172, 30, 30);
+}
+
+.tags li {
+  text-decoration: none;
+  margin-left: 20px; /* Adjust the margin to control spacing between links */
+
+  padding: 5px;
+  font-family: "lato-bold";
+ 
+  font-weight: 1000;
+}
+.tags li:hover{
+  color: rgb(172, 30, 30);
+}
+.search-btn{
+  width: 200px;
+  background-color: white;
 }

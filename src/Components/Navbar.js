@@ -1,75 +1,61 @@
-import React, { useState} from 'react';
-import { Link,useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
 import './Navbar.css';
+import { Link } from 'react-router-dom';
+
+
+
 
 function Navbar() {
-  const [isDropdownVisible, setDropdownVisible] = useState(false);
-  const navigate = useNavigate();
+  const [search, setSearch] = useState('');
   
 
-  const toggleDropdown = () => {
-    setDropdownVisible(!isDropdownVisible);
-    navigate('/')
-  };
-  const closeDropdown =()=>{
-    setDropdownVisible(!isDropdownVisible)
-  }
- 
-
+  
 
   return (
-    <div className="navbar-container">
-      <Link to="/" className="tag">
-        MY REACT APP
-      </Link>
-      <Link to="/" className="home">
-        Home
-      </Link>
-      <a className="project" style={{ color: 'white' }} onClick={toggleDropdown}>
-  Project
-</a>
-      {isDropdownVisible && (
-   <div className='link-container'>
-          <Link to="/fact" onClick={closeDropdown} className='links' >Factorial</Link>
-          <br />
-          <Link to="/count"onClick={closeDropdown}className='links' >Counter</Link>
-          <br />
-          <Link to="/input" onClick={closeDropdown }className='links'>InputField</Link>
-          <br />
-          <Link to="/searchword" onClick={closeDropdown}className='links'>Search Word</Link>
-          <br />
-          <Link to="/storeitems" onClick={closeDropdown}className='links'>Store Items</Link>
-          <br />
-          <Link to="/addcart" onClick={closeDropdown}className='links'>Add Cart</Link>
-          <br />
-          <Link to="/childcomponent" onClick={closeDropdown}className='links'>Child Component</Link>
-          <br />
-          <Link to="/questions" onClick={closeDropdown}className='links'>Questions</Link>
-          <br />
-          <Link to="/quescontext" onClick={closeDropdown}className='links'>Questions using useContext</Link>
-          <br />
-          <Link to="/todo" onClick={closeDropdown}className='links'>Todo</Link>
-          <br />
-          <Link to="/signup" onClick={closeDropdown}className='links'>Signup Page</Link>
-          <br />
-          <Link to="/page" onClick={closeDropdown}className='links'> Page</Link>
-          <br />
-          <Link to='/register' onClick={closeDropdown} className='links'>Register</Link>
-          <br />
-          <Link  to='/productpage' onClick={closeDropdown} className='links'>Product Page</Link>
-          <br />
-          <Link  to='/productpagelogin' onClick={closeDropdown} className='links'>Product Page with Login</Link>
-          <br />
-          
-           
+    <div className="navbar-head">
+     
+      <span class='head'>My Ecom</span>
+      <div className='tags-head'>
+        <div className='tags'> 
+        
+       <Link to='/men' className='links'>Mens</Link>
+       <Link to='/women' className='links'>Womens</Link>
+       <Link to='/adidas' className='links'>Adidas</Link>
+       <Link to='/puma' className='links'>Puma</Link>
+       <Link to='/nike' className='links'>Nike</Link>
+       <Link to='/crocs' className='links'>Crocs</Link>
+       <Link to='/skechers' className='links'>Skechers</Link>
+       <Link to='/newbalance' className='links'>New Balance</Link>
+       <Link to='/fila' className='links'>Fila</Link>
+     
+
+
         </div>
-      )}
+     
+      
+
+
+
+      </div>
+     
+      <div className="search-box">
+        <input
+          placeholder="Search "
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+        <button className='search-btn+-'>Search</button>
+        <div >
+         <Link to='/login' ><span>Login</span> </Link>
+       
+         <Link to='/signup' ><span>Sign up</span></Link>
+         <Link to='/cart'>Cart</Link>
+        </div>
+
+      </div>
+   
     </div>
   );
 }
 
 export default Navbar;
-
-
-
-

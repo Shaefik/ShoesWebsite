@@ -1,0 +1,118 @@
+
+
+.category-left {
+
+  background-color: rgb(247, 245, 243);
+  height: 500px;
+ 
+
+
+}
+
+.category-right {
+  width: 80%;
+  
+  margin: 10px; /* Add margin for spacing between items */
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to the next row */
+  justify-content: space-between; /* Distribute items evenly along the row */
+}
+
+.item {
+  width: calc(25% - 20px);
+  height: 400px; /* 3 items per row, adjust margin as needed */
+  margin: 10px; /* Adjust margin as needed */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items horizontally */
+  border: 0.5px solid lightgrey;
+}
+
+.category-right img {
+  width: 100%; /* Make the image fill the container */
+  height: 200px; /* Maintain aspect ratio */
+}
+
+.category-right p {
+  text-align: center; /* Center text */
+}
+
+.category-right h6,
+.category-right h4 {
+  margin: 5px 0; /* Adjust margin as needed */
+}
+
+.category-right button {
+  padding: 8px;
+  margin-top: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.size-boxes{
+  width: 90%;
+  height: 50px;
+  
+  display: flex;
+  margin: 10px;
+ 
+}
+.size-boxes button{
+  background-color: rgb(247, 245, 243);
+
+}
+.head-size{
+  margin-left: 20px;
+}
+.size-boxes h5{
+  margin-left: 25%;
+  
+}
+.size-box-5{
+  width: 30px;
+  height: 30px;
+ 
+  margin-left: 10px;
+  
+
+}
+
+.size-box-6{
+  width: 30px;
+  height: 30px;
+ 
+  margin-left: 10px;
+  
+  
+}
+
+.size-box-7{
+  width: 30px;
+  height: 30px;
+ 
+  margin-left: 10px;
+  
+}
+
+.size-box-8{
+  width: 30px;
+  height: 30px;
+  
+
+  margin-left: 10px;
+  
+}
+.size-box-9{
+  width: 30px;
+  height: 30px;
+  background-color: rgb(247, 245, 243);
+  margin-left: 10px;
+  
+}
+.checkbox{
+  margin-left: 10%;
+}
+
+
+
