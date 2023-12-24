@@ -34,6 +34,7 @@ span {
   background-color: black;
   border: none;
   cursor: pointer;
+  margin-top: 1.5%;
 }
 
 .head {
@@ -82,4 +83,20 @@ span {
 .search-btn{
   width: 200px;
   background-color: white;
+ 
 }
+
+#cart-icon{
+  font-size: 25px;
+  color: black;
+  margin-left: 80px;
+}
+.logout{
+  margin-left: 50px;
+}
+#admin-icon{
+  font-size: 23px;
+  margin-left: 30px;
+  cursor: pointer;
+}
+

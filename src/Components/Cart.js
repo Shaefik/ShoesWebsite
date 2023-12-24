@@ -1,6 +1,8 @@
 import React, { useContext } from 'react'
 import { productData } from '../Assets/productData'
 import MyContext from './MyContext'
+import Navbar from './Navbar';
+import './Cart.css'
 
 
 function Cart() {
@@ -17,12 +19,18 @@ function Cart() {
           )
         );
       };
-      
+      const calculateTotal=() =>{
+        return cartItems.reduce((total,item)=>total + item.total,0)
+      }
     
+  const handleDeleteItem = (itemId) => {
+    setCartItems((prevCartItems) => prevCartItems.filter((item) => item.id !== itemId));
+  };
   
   return (
   
     <div>
+        <Navbar/>
         <h2>Your Cart {cartItems.length}</h2>
         <table className='table'>
             <thead className='thead-dark'>
@@ -33,6 +41,7 @@ function Cart() {
                     <th>Price</th>
                     <th>Quantity</th>
                     <th>Amount</th>
+                    <th></th>
                 </tr>
 
             </thead>
@@ -52,6 +61,11 @@ function Cart() {
                             </td>
 
                         <td>{item.price * item.quantity}</td>
+                        <i className="material-icons" id='del-icon' onClick={() => handleDeleteItem(item.id)}>
+                  &#xe872;
+                </i>
+
+                        
 
 
                     </tr>
@@ -61,6 +75,8 @@ function Cart() {
             </tbody>
 
         </table>
+        <h2>Total:{calculateTotal()} </h2>
+        {cartItems.length >= 1 && <button>Buy now</button>}
         
     </div>
   )

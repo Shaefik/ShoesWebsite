@@ -4,6 +4,12 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    color: #000;
+}
+.section-right:hover{
+  color:black
+  ;
+  text-decoration: none;
 }
 .item {
     width: calc(25% - 20px);
@@ -20,7 +26,7 @@
   }
   .section-btn {
     padding: 8px;
-    margin-top: 10px;
+    margin-top: 1px;
     background-color: black;
     height: 40px;
     color: white;
@@ -37,4 +43,16 @@
   }
   .men-container {
     display: flex;
+  }
+  .price-sec{
+    display: flex;
+  }
+  .price-sec h5{
+    color: rgb(61, 57, 57);
+    text-decoration: line-through;
+    margin-top: 10px;
+
+  }
+  .price-sec h2{
+    color: black;
   }

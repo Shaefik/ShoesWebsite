@@ -1,0 +1,24 @@
+.detail-container {
+    width: 100%;
+    display: flex;
+    background-color: rgb(235, 231, 226);
+  }
+  
+  .detail-left {
+    width: 30%;
+    height: relative;
+    background-color: azure;
+  }
+  
+  .detail-right {
+    flex: 1;
+    padding: 20px; /* Add padding as needed */
+  }
+  
+  .detail-img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Add more styles as needed for other elements in detail-right */
+  

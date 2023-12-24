@@ -2,13 +2,21 @@ import React,{useState,useContext} from 'react';
 import MyContext from '../Components/MyContext';
 import Category from '../Components/Category';
 import { productData } from '../Assets/productData';
+import { Link } from 'react-router-dom';
 import Banner from '../Components/Banner';
 import './Sections.css';
+import Navbar from '../Components/Navbar';
 
 function Skechers() {
+  const {
+    cartItems,
+    setCartItems,
+    setProductDetail, 
+  } = useContext(MyContext);
+  
+
 
   const [selectedSize, setSelectedSize] = useState(null);
-  const {cartItems,setCartItems} = useContext(MyContext)
 
   const skechersProducts = productData.filter(
     (item) => item.brand === 'skechers' && (!selectedSize || item.size === selectedSize)
@@ -35,8 +43,12 @@ function Skechers() {
       setCartItems((prevCartItems) => [...prevCartItems, { ...item, quantity: 1 }]);
     }
   };
+  const handleItemClick = (item) => {
+    setProductDetail([item]);
+  };
   return (
     <>
+    <Navbar/>
     <Banner/>
       <div className='men-container'>
       <Category  onSizeClick={handleSizeClick} selectedSize={selectedSize} />  
@@ -44,7 +56,7 @@ function Skechers() {
         {skechersProducts.map((item, i) => (
           <div key={i} className='item'>
             <p className='section-name'>{item.name}</p>
-            <img className='section-img' src={item.img} alt={item.name} />
+            <Link  key={i}  onClick={() => handleItemClick(item)} to='/productdetail'><img className='section-img' src={item.img} alt={item.name} /></Link>
             <h6 className='section-size'>Size {item.size}</h6>
             <h4 className='section-price'>Price {item.price}</h4>
             <button className='section-btn' onClick={()=>handleAddToCart(item)}>Add to Cart</button>

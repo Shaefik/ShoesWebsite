@@ -1,26 +1,41 @@
-import React,{useContext, useState} from 'react'
+import React,{useContext, useState,useEffect} from 'react'
 import './Login.css'
 import MyContext from './MyContext'
+import { useNavigate,Link } from 'react-router-dom'
 
 function Login() {
    
-    const {clientData,setClientData} = useContext(MyContext)
+    const {clientData,setClientData,login,setLogin,loginData,setLoginData} = useContext(MyContext)
+    const [currentLogin,setCurrentLogin] = useState({})
+    useEffect(() => {
+      console.log('current:', currentLogin);
+    }, [currentLogin]);
+  
+
+    
+    const nav = useNavigate()
     const[error,setError] =useState('')
-    const [loginData,setLoginData] = useState({
-      email:'',
-      password:''
-    })
-    const handleLoginClicked=()=>{
-      if(loginData.email === clientData.email&&
-        loginData.password === clientData.password){
-          setError('success')
-          console.log(loginData.email && loginData.password)
-        }
-        else{
-          setError('Invalid email or password ')
-        }
-       
-    }
+    
+    const handleLoginClicked = () => {
+      const isValidUser = clientData.some(
+        user =>
+          user.email === loginData.email && user.password === loginData.password
+      );
+    
+      if (isValidUser) {
+        setCurrentLogin(loginData);
+        nav('/home');
+        setLogin(!login);
+    
+        // Log currentLogin after updating the state
+        setTimeout(() => {
+          console.log('Updated currentLogin:', currentLogin);
+        }, 0);
+      } else {
+        setError('Invalid email or password');
+      }
+    };
+    
   
   return (
    <>
@@ -30,6 +45,7 @@ function Login() {
       <input placeholder='Enter password' type='password' value={loginData.password} onChange={(e)=>setLoginData({...loginData,password:e.target.value})} />
       <p>{error}</p>
       <button className='login-button' onClick={handleLoginClicked}>Login</button>
+     <Link to ='/signup'><button className='signup-button-for-login' >Signup</button></Link> 
       
       
    </div>

@@ -1,4 +1,4 @@
-
+/* 
 
 .outer {
     width: 340px;
@@ -31,4 +31,27 @@
     border: none;
     border-radius: 20px;
     cursor: pointer;
-  }
+  } */
+
+  .outer{width: 450px;
+    height: 330px;
+    font-family: "lato-bold";
+    margin-left: 30%;
+    
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 19px 38px, rgba(0, 0, 0, 0) 0px 0px 0px;}
+.signup-input{
+  width: 90%;
+  height: 40px;
+  margin-top: 10px;
+  margin-left: 10px;
+  border-radius: 4px;
+border: 0.1px solid grey;
+}
+.create-ac-btn{
+  background-color: black;
+  color: white;
+  width: 200px;
+  height: 30px;
+  margin-left: 25%;
+  margin-top: 10px;
+}

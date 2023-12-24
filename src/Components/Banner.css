@@ -3,3 +3,24 @@ img {
   width: 100%;
   height: auto;
 }
+.banner-container {
+  display: flex;
+  transition: transform 0.5s ease-in-out; /* Use transform for smooth transitions */
+}
+
+.banner-container img {
+  width: 100vw; /* 100% of viewport width */
+  height: auto;
+}
+
+.banner-container img:not(:first-child) {
+  margin-left: -100%; /* Overlap images to the left */
+}
+
+.banner-container img.inactive {
+  transform: translateX(-100%); /* Move inactive images to the left */
+}
+
+.banner-container img.active {
+  transform: translateX(0); /* Bring the active image into view */
+}

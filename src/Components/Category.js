@@ -9,28 +9,12 @@ function Category({onSizeClick,selectedSize}) {
         <h2>Men's</h2>
         <hr></hr>
         <div className='checkbox'>
-          <h4>Price</h4>
+          <h4>Select by</h4>
+          <button className='select-by-btn'>Mens</button>
+          <button className='select-by-btn'>Womens</button>
+         
             
-            <div>
-              <input type='checkbox' id ='value1' />
-              <label>Rs.1000 to Rs.2000</label>
-              
-            </div>
-            <div>
-              <input type='checkbox' id ='value2' />
-              <label>Rs.2000 to Rs.3000</label>
-              
-            </div>
-            <div>
-              <input type='checkbox' id ='value3' />
-              <label>Rs.3000 to Rs.4000</label>
-              
-            </div>
-            <div>
-              <input type='checkbox' id ='value4' />
-              <label>Rs.4000 to Rs.5000</label>
-              
-            </div>
+            
         </div>
         <hr></hr>
         <h4 className='head-size'> Size</h4>

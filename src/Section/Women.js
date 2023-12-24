@@ -3,13 +3,28 @@ import MyContext from '../Components/MyContext';
 import Category from '../Components/Category';
 import Banner from '../Components/Banner';
 import { productData } from '../Assets/productData';
+import { Link } from 'react-router-dom';
 import './Sections.css';
+import Navbar from '../Components/Navbar';
 
 function Women() {
+  const {
+    loggedIn,
+    setLoggedIn,
+    loggedInMsg,
+    setLoggedInMsg,
+    cartItems,
+    setCartItems,
+    login,
+    setLogin,
+    setProductDetail, // Import setProductDetail from MyContext
+  } = useContext(MyContext);
+
 
 
   const [selectedSize, setSelectedSize] = useState(null);
-  const {cartItems,setCartItems} = useContext(MyContext)
+ 
+
 
   const womenProducts = productData.filter(
     (item) => item.gen === 'women' && (!selectedSize || item.size === selectedSize)
@@ -36,22 +51,35 @@ function Women() {
       setCartItems((prevCartItems) => [...prevCartItems, { ...item, quantity: 1 }]);
     }
   };
+  const handleItemClick = (item) => {
+    // Set the clicked item details to ProductDetail
+    setProductDetail([item]);
+  };
+
 
   return (
    <>
+   <Navbar/>
    <Banner/>
     <div className='men-container'>
       <Category onSizeClick={handleSizeClick} selectedSize={selectedSize} />  
-      <div className='section-right'>
+      <div  className='section-right'> 
         {womenProducts.map((item, i) => (
-          <div key={i} className='item'>
-            <p className='section-name'>{item.name}</p>
-            <img className='section-img' src={item.img} alt={item.name} />
-            <h6 className='section-size'>Size {item.size}</h6>
-            <h4 className='section-price'>Price {item.price}</h4>
-            <button className='section-btn'onClick={()=>handleAddToCart(item)}>Add to Cart</button>
+          <div className='item'>
+          <p className='section-name'>{item.name}</p>
+          <Link  key={i}  onClick={() => handleItemClick(item)} to='/productdetail'><img className='section-img' src={item.img} alt={item.name} /></Link>
+              <h6 className='section-size'>Size {item.size}</h6>
+              <span className='price-sec'>
+                <h5> {item.oldPrice}</h5>
+                <h2>{item.price}</h2>
+              </span>
+              <button className='section-btn' onClick={() => handleAddToCart(item)}>
+                Add to Cart
+              </button>
           </div>
+
         ))}
+       
       </div>
     </div>
    </>

@@ -113,6 +113,15 @@
 .checkbox{
   margin-left: 10%;
 }
+.select-by-btn{
+  width: 90%;
+  margin-top: 10px;
+  background-color: rgb(247, 245, 243);
+}
+.size-boxes button:hover{
+  background-color: #d5d7da;
+  color: white;
+}
 
 
 

@@ -1,0 +1,7 @@
+#del-icon{
+    margin-top: 10px;
+    cursor: pointer;
+}
+#del-icon:hover{
+    color: rgb(216, 69, 69);
+}
