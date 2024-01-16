@@ -1,5 +1,24 @@
-.footer-container{
+/* Footer.css */
+
+.footer-container {
     height: 200px;
     width: 100%;
-    background-color: aqua;
+    background-color: grey;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Allow flex items to wrap onto multiple lines */
+}
+
+.footer-container a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    width: 30%; 
+    text-align: center; /* Center the text within the links */
+  
+}
+
+.footer-container a:hover {
+    color: lightgray;
 }
