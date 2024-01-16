@@ -1,30 +1,19 @@
-import React,{useState,useEffect} from 'react'
+import React,{useState,useEffect, useContext} from 'react'
 import './Admin.css'
 import { productData } from '../Assets/productData'
 import { Link } from 'react-router-dom';
+import MyContext from './MyContext';
 function AdminAdd() {
-    const [productDataState, setProductDataState] = useState(productData);
-    const [product, setProduct] = useState('');
-    const [imgUrl, setImgUrl] = useState('');
-    const [size, setSize] = useState(5);
-    const [oldPrice, setOldPrice] = useState(2999);
-    const [newPrice, setNewPrice] = useState(1999);
-    const [selectBrand, setSelectBrand] = useState('');
-    const [selectGender, setSelectGender] = useState(''); 
+    const {productDataState,setProductDataState, product,setProduct,imgUrl,setImgUrl,size,setSize,oldPrice,setOldPrice,newPrice,setNewPrice,selectBrand,setSelectBrand,selectGender,setSelectGender} = useContext(MyContext)
+
     
-  
-    useEffect(() => {
-      console.log(productDataState);
-    }, [productDataState]);
+   
   
     function handleAddProduct() {
-      // Find the maximum id in the existing productData array
       const maxId = Math.max(...productDataState.map((product) => product.id), 0);
   
-      // Calculate the next id as the maximum id + 1
       const nextId = maxId + 1;
   
-      // Create a new product object with the calculated next id
       const newProduct = {
         id: nextId,
         name: product,
@@ -32,23 +21,18 @@ function AdminAdd() {
         size: parseInt(size),
         price: parseInt(newPrice),
         oldPrice: parseInt(oldPrice),
-        brand: selectBrand,
-        gen: selectGender,
+        brand: selectBrand.toLowerCase(),  // Convert to lowercase
+       gen: selectGender.toLowerCase(), 
       };
-  
-      // Update the productData array
-      const updatedProductData = [...productDataState, newProduct];
-  
-      // Update the state of productData
-      setProductDataState(updatedProductData);
- 
-  
-      // Log the updated data (for testing)
-      console.log(updatedProductData);
-
       
   
-      // Reset the form fields
+      const updatedProductData = [...productDataState, newProduct];
+  
+      setProductDataState(updatedProductData);
+      alert('1 item added!!!')
+      console.log(updatedProductData);
+      
+  
       setProduct('');
       setImgUrl('');
       setSize(5);
@@ -56,6 +40,7 @@ function AdminAdd() {
       setNewPrice(1999);
       setSelectBrand('');
       setSelectGender('');
+      
     }
   return (
     <div>  <div className='outer-admin' >

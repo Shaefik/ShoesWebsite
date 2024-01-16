@@ -21,3 +21,29 @@ input{
     margin-top: 20px;
     margin-left: 40px;
 }
+.admin-del-container{
+    width: 200px;
+    height: 300px;
+    display: flex;
+    margin-left: 30%;
+    margin-top: 10%;
+    border: 1px solid grey;
+    padding: 20px;
+}
+.admin-del-container button{
+    width: 100px;
+    height: 30px;
+    display: flex;
+}
+.del-options{
+    width: 50px;
+    height: 20px;
+}
+#edit-outer{
+    width: 200px;
+    height: relative;
+    background-color: antiquewhite;
+}
+.input-name{
+    width: 100px;
+}
