@@ -7,7 +7,8 @@
   .detail-left {
     width: 30%;
     height: relative;
-    background-color: azure;
+    background-color: white;
+    ;
   }
   
   .detail-right {
@@ -19,6 +20,14 @@
     max-width: 100%;
     height: auto;
   }
-  
+  .addCart-btn {
+    padding: 8px;
+    margin-top: 1px;
+    background-color: black;
+    height: 40px;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
   /* Add more styles as needed for other elements in detail-right */
   

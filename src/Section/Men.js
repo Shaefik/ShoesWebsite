@@ -90,24 +90,27 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import Category from '../Components/Category';
-import Banner from '../Components/Banner';
 import { productData } from '../Assets/productData';
 import './Sections.css';
 import MyContext from '../Components/MyContext';
 import Navbar from '../Components/Navbar';
+import UserAccount from '../Components/UserAccount';
+
 
 function Men() {
   const {
-    loggedIn,
-    setLoggedIn,
     loggedInMsg,
     setLoggedInMsg,
     cartItems,
     setCartItems,
-    login,
-    setLogin,
-    setProductDetail, // Import setProductDetail from MyContext
-  } = useContext(MyContext);
+    setProductDetail, 
+    storeEmail,
+    productDataState,
+    showUserDetails,
+    setShowUserDetails,
+    setUserEmail,
+    userEmail
+    } = useContext(MyContext);
 
   const [selectedSize, setSelectedSize] = useState(null);
 
@@ -118,40 +121,41 @@ function Men() {
     return clearTimeout(resetMessage);
   }, [loggedInMsg]);
 
-  const menProducts = productData.filter(
+  const menProducts = productDataState.filter(
     (item) => item.gen === 'men' && (!selectedSize || item.size === selectedSize)
   );
+  const handleToggleUserDetails = (email) => {
+    setUserEmail(email);
+    setShowUserDetails(!showUserDetails);
+   
+  };
 
   const handleSizeClick = (size) => {
     setSelectedSize(size === selectedSize ? null : size);
   };
 
   const handleAddToCart = (item) => {
-    // Check if the item is already in the cart
     const existingItem = cartItems.find((cartItem) => cartItem.id === item.id);
-
+  
     if (existingItem) {
-      setCartItems((prevCartItems) =>
-        prevCartItems.map((cartItem) =>
-          cartItem.id === item.id
-            ? { ...cartItem, quantity: cartItem.quantity + 1 }
-            : cartItem
-        )
-      );
+      alert('Item already added to cart');
     } else {
       setCartItems((prevCartItems) => [...prevCartItems, { ...item, quantity: 1 }]);
+      setTimeout(() => {
+        alert('Item added to cart');
+      }, 500); 
     }
   };
 
   const handleItemClick = (item) => {
-    // Set the clicked item details to ProductDetail
+   
     setProductDetail([item]);
   };
 
   return (
     <>
-      <Navbar />
-      <Banner />
+       <Navbar onToggleUserDetails={handleToggleUserDetails} />
+      {showUserDetails && <UserAccount email={userEmail}  />}
       <div className='men-container'>
         <Category onSizeClick={handleSizeClick} selectedSize={selectedSize} categoryTitle='Mens' />
         <div className='section-right'>

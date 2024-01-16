@@ -1,18 +1,18 @@
 import React from 'react'
 import './Category.css'
 import { productData } from '../Assets/productData'
+import Footer from './Footer'
+
 
 function Category({onSizeClick,selectedSize}) {
   return (
+  <>
+ 
     <div className='category'>
       <div className='category-left' >
-        <h2>Men's</h2>
-        <hr></hr>
+       
         <div className='checkbox'>
-          <h4>Select by</h4>
-          <button className='select-by-btn'>Mens</button>
-          <button className='select-by-btn'>Womens</button>
-         
+        
             
             
         </div>
@@ -70,12 +70,17 @@ function Category({onSizeClick,selectedSize}) {
       
       <div className='category-right'>
       
+      
         
          
 
       </div>
+  
       
     </div>
+   
+    </>
+   
   )
 }
 

@@ -96,7 +96,7 @@ export const productData = [
 {
   id: 9,
   name: 'Nike Air Zoom Pegasus 38 Running Shoe',
-  img: 'https://m.media-amazon.com/images/I/71d8gFDsWzL._AC_UL320_.jpg',
+  img: 'https://m.media-amazon.com/images/I/61p3GVthGlL._SY625_.jpghttps://m.media-amazon.com/images/I/61p3GVthGlL._SY625_.jpg',
   size: 10,
   price: 2799,
   oldPrice: 2999,
@@ -107,7 +107,7 @@ export const productData = [
 {
   id: 10,
   name: 'Womens UltraBoost 21 Running Shoe',
-  img: 'https://m.media-amazon.com/images/I/71KgWB2TcrL._AC_UL320_.jpg',
+  img: 'https://m.media-amazon.com/images/I/81JtVlTsTgL._AC_UL320_.jpg',
   size: 6,
   price: 3299,
   oldPrice: 3499,
@@ -118,7 +118,7 @@ export const productData = [
 {
   id: 11,
   name: 'Skechers Go Walk 5 Slip-On Sneaker',
-  img: 'https://m.media-amazon.com/images/I/71pdJ2mVitL._AC_UL320_.jpg',
+  img: 'https://m.media-amazon.com/images/I/61CuvT7izWL._AC_UL320_.jpg',
   size: 8,
   price: 1999,
   oldPrice: 2199,
@@ -129,7 +129,7 @@ export const productData = [
 {
   id: 12,
   name: 'Puma Softride Rift Tech Running Shoe',
-  img: 'https://m.media-amazon.com/images/I/61LO5AAtJxL._AC_UL320_.jpg',
+  img: 'https://m.media-amazon.com/images/I/61PmRwrjxNL._CR,,,_QL70_SL300_.jpg',
   size: 9,
   price: 2899,
   oldPrice: 3099,
@@ -140,7 +140,7 @@ export const productData = [
 {
   id: 13,
   name: 'Fila Memory Workshift Slip Resistant Shoe',
-  img: 'https://m.media-amazon.com/images/I/71B6t1ayh6L._AC_UL320_.jpg',
+  img: 'https://m.media-amazon.com/images/I/61YXBruKbOL._AC_UL320_.jpg',
   size: 7,
   price: 1499,
   oldPrice: 1699,
@@ -151,7 +151,7 @@ export const productData = [
 {
   id: 14,
   name: 'New Balance Fresh Foam 1080 V11 Running Shoe',
-  img: 'https://m.media-amazon.com/images/I/71MWbSVBkdL._AC_UL320_.jpg',
+  img: 'https://m.media-amazon.com/images/I/61ZUuuGyHFL._AC_UL320_.jpg',
   size: 8,
   price: 3499,
   oldPrice: 3699,
@@ -162,7 +162,7 @@ export const productData = [
 {
   id: 15,
   name: 'Nike React Infinity Run Flyknit Running Shoe',
-  img: 'https://m.media-amazon.com/images/I/81dbMvpaG0L._AC_UL320_.jpg',
+  img: 'https://m.media-amazon.com/images/I/31HX7j5E7dL._AC_UL320_.jpg',
   size: 9,
   price: 3199,
   oldPrice: 3399,
@@ -173,7 +173,7 @@ export const productData = [
 {
   id: 16,
   name: 'Puma RS-X3 Puzzle Sneaker',
-  img: 'https://m.media-amazon.com/images/I/71fyf6sOfmL._AC_UL320_.jpg',
+  img: 'https://m.media-amazon.com/images/I/516LBz0R7iL._AC_UL320_.jpg',
   size: 8,
   price: 2499,
   oldPrice: 2699,
@@ -184,7 +184,7 @@ export const productData = [
 {
   id: 17,
   name: 'Adidas Ultraboost 21 Running Shoe',
-  img: 'https://m.media-amazon.com/images/I/71tIsEhsUrL._AC_UL320_.jpg',
+  img: 'https://m.media-amazon.com/images/I/618P2-zAEEL._AC_UL320_.jpg',
   size: 7,
   price: 3799,
   oldPrice: 3999,
@@ -195,7 +195,7 @@ export const productData = [
 {
   id: 18,
   name: 'Crocs Classic Clog',
-  img: 'https://m.media-amazon.com/images/I/71Nl6lLRGbL._AC_UL320_.jpg',
+  img: 'https://m.media-amazon.com/images/I/618P2-zAEEL._AC_UL320_.jpg',
   size: 6,
   price: 299,
   brand: 'crocs',
@@ -205,7 +205,7 @@ export const productData = [
 {
   id: 19,
   name: 'Skechers DLites Memory Foam Sneaker',
-  img: 'https://m.media-amazon.com/images/I/71OyW7oeUtL._AC_UL320_.jpg',
+  img: 'https://m.media-amazon.com/images/I/617E3+GRr3L._AC_UL320_.jpg',
   size: 7,
   price: 1899,
   oldPrice: 2099,
@@ -216,7 +216,7 @@ export const productData = [
 {
   id: 20,
   name: 'New Balance Fresh Foam Roav V1 Sneaker',
-  img: 'https://m.media-amazon.com/images/I/81UGpmXhW5L._AC_UL320_.jpg',
+  img: 'https://m.media-amazon.com/images/I/6121k1YV88L._AC_UL320_.jpg',
   size: 8,
   price: 2599,
   oldPrice: 2799,
@@ -227,7 +227,7 @@ export const productData = [
 {
   id: 21,
   name: 'Fila Disruptor II Sneaker',
-  img: 'https://m.media-amazon.com/images/I/61NtBJ+2FaL._AC_UL320_.jpg',
+  img: 'https://m.media-amazon.com/images/I/61v97r4O4ML._AC_UL320_.jpg',
   size: 6,
   price: 1799,
   oldPrice: 1999,
@@ -240,7 +240,7 @@ export const productData = [
 {
   id: 22,
   name: 'Nike Air Zoom Pegasus 38 Running Shoe',
-  img: 'https://m.media-amazon.com/images/I/71R1a6gqq9L._AC_UL320_.jpg',
+  img: 'https://m.media-amazon.com/images/I/5107t4Cm+BL._AC_UL320_.jpg',
   size: 9,
   price: 2799,
   oldPrice: 2999,
@@ -251,7 +251,7 @@ export const productData = [
 {
   id: 23,
   name: 'Womens UltraBoost 21 Running Shoe',
-  img: 'https://m.media-amazon.com/images/I/71tIsEhsUrL._AC_UL320_.jpg',
+  img: 'https://m.media-amazon.com/images/I/81JtVlTsTgL._AC_UL320_.jpg',
   size: 8,
   price: 3299,
   oldPrice: 3499,
@@ -262,7 +262,7 @@ export const productData = [
 {
   id: 24,
   name: 'Skechers Go Walk 5 Slip-On Sneaker',
-  img: 'https://m.media-amazon.com/images/I/71pdJ2mVitL._AC_UL320_.jpg',
+  img: 'https://m.media-amazon.com/images/I/81JtVlTsTgL._AC_UL320_.jpg',
   size: 7,
   price: 1999,
   oldPrice: 2199,
@@ -273,7 +273,7 @@ export const productData = [
 {
   id: 25,
   name: 'Puma Softride Rift Tech Running Shoe',
-  img: 'https://m.media-amazon.com/images/I/61LO5AAtJxL._AC_UL320_.jpg',
+  img: 'https://m.media-amazon.com/images/I/81JtVlTsTgL._AC_UL320_.jpg',
   size: 6,
   price: 2899,
   oldPrice: 3099,
@@ -284,7 +284,7 @@ export const productData = [
 {
   id: 26,
   name: 'Fila Memory Workshift Slip Resistant Shoe',
-  img: 'https://m.media-amazon.com/images/I/71B6t1ayh6L._AC_UL320_.jpg',
+  img: 'https://m.media-amazon.com/images/I/71Ha1P7k5aL._AC_UL320_.jpg',
   size: 9,
   price: 1499,
   oldPrice: 1699,
@@ -295,7 +295,7 @@ export const productData = [
 {
   id: 27,
   name: 'New Balance Fresh Foam 1080 V11 Running Shoe',
-  img: 'https://m.media-amazon.com/images/I/71MWbSVBkdL._AC_UL320_.jpg',
+  img: 'https://m.media-amazon.com/images/I/71Ha1P7k5aL._AC_UL320_.jpg',
   size: 8,
   price: 3499,
   oldPrice: 3699,
@@ -306,7 +306,7 @@ export const productData = [
 {
   id: 28,
   name: 'Nike React Infinity Run Flyknit Running Shoe',
-  img: 'https://m.media-amazon.com/images/I/81dbMvpaG0L._AC_UL320_.jpg',
+  img: 'https://m.media-amazon.com/images/I/71Ha1P7k5aL._AC_UL320_.jpg',
   size: 7,
   price: 3199,
   oldPrice: 3399,
@@ -317,7 +317,7 @@ export const productData = [
 {
   id: 29,
   name: 'Puma RS-X3 Puzzle Sneaker',
-  img: 'https://m.media-amazon.com/images/I/71fyf6sOfmL._AC_UL320_.jpg',
+  img: 'https://m.media-amazon.com/images/I/71Ha1P7k5aL._AC_UL320_.jpg',
   size: 10,
   price: 2499,
   oldPrice: 2699,
@@ -328,7 +328,7 @@ export const productData = [
 {
   id: 30,
   name: 'Adidas Ultraboost 21 Running Shoe',
-  img: 'https://m.media-amazon.com/images/I/71tIsEhsUrL._AC_UL320_.jpg',
+  img: 'https://m.media-amazon.com/images/I/812KE-vHKSL._AC_UL320_.jpg',
   size: 8,
   price: 3799,
   oldPrice: 3999,
@@ -339,7 +339,7 @@ export const productData = [
 {
   id: 31,
   name: 'Crocs Classic Clog',
-  img: 'https://m.media-amazon.com/images/I/71Nl6lLRGbL._AC_UL320_.jpg',
+  img: 'https://m.media-amazon.com/images/I/812KE-vHKSL._AC_UL320_.jpg',
   size: 9,
   price: 299,
   brand: 'crocs',
@@ -349,7 +349,7 @@ export const productData = [
 {
   id: 32,
   name: 'Skechers DLites Memory Foam Sneaker',
-  img: 'https://m.media-amazon.com/images/I/71OyW7oeUtL._AC_UL320_.jpg',
+  img: 'https://m.media-amazon.com/images/I/61D5JyuojVL._AC_UL320_.jpg',
   size: 6,
   price: 1899,
   oldPrice: 2099,
@@ -360,7 +360,7 @@ export const productData = [
 {
   id: 33,
   name: 'New Balance Fresh Foam Roav V1 Sneaker',
-  img: 'https://m.media-amazon.com/images/I/81UGpmXhW5L._AC_UL320_.jpg',
+  img: 'https://m.media-amazon.com/images/I/61D5JyuojVL._AC_UL320_.jpg',
   size: 7,
   price: 2599,
   oldPrice: 2799,
@@ -371,7 +371,7 @@ export const productData = [
 {
   id: 34,
   name: 'Fila Disruptor II Sneaker',
-  img: 'https://m.media-amazon.com/images/I/61NtBJ+2FaL._AC_UL320_.jpg',
+  img: 'https://m.media-amazon.com/images/I/71FEgKlWVKL._AC_UL320_.jpg',
   size: 8,
   price: 1799,
   oldPrice: 1999,
@@ -384,7 +384,7 @@ export const productData = [
   {
     id: 35,
     name: 'Nike Air Zoom Pegasus 38 Running Shoe',
-    img: 'https://m.media-amazon.com/images/I/71d8gFDsWzL._AC_UL320_.jpg',
+    img: 'https://m.media-amazon.com/images/I/71FEgKlWVKL._AC_UL320_.jpg',
     size: 10,
     price: 2799,
     oldPrice: 2999,
@@ -396,7 +396,7 @@ export const productData = [
   {
     id: 36,
     name: 'Womens UltraBoost 21 Running Shoe',
-    img: 'https://m.media-amazon.com/images/I/71KgWB2TcrL._AC_UL320_.jpg',
+    img: 'https://m.media-amazon.com/images/I/71CmnVytluL._AC_UL320_.jpg',
     size: 6,
     price: 3299,
     oldPrice: 3499,
@@ -408,7 +408,7 @@ export const productData = [
   {
     id: 37,
     name: 'Skechers Go Walk 5 Slip-On Sneaker',
-    img: 'https://m.media-amazon.com/images/I/71pdJ2mVitL._AC_UL320_.jpg',
+    img: 'https://m.media-amazon.com/images/I/71CmnVytluL._AC_UL320_.jpg',
     size: 8,
     price: 1999,
     oldPrice: 2199,
@@ -420,7 +420,7 @@ export const productData = [
   {
     id: 38,
     name: 'Puma Softride Rift Tech Running Shoe',
-    img: 'https://m.media-amazon.com/images/I/61LO5AAtJxL._AC_UL320_.jpg',
+    img: 'https://m.media-amazon.com/images/I/71CmnVytluL._AC_UL320_.jpg',
     size: 9,
     price: 2899,
     oldPrice: 3099,
@@ -433,7 +433,7 @@ export const productData = [
   {
     id: 39,
     name: 'Fila Memory Workshift Slip Resistant Shoe',
-    img: 'https://m.media-amazon.com/images/I/71B6t1ayh6L._AC_UL320_.jpg',
+    img: 'https://m.media-amazon.com/images/I/71CmnVytluL._AC_UL320_.jpg',
     size: 7,
     price: 1499,
     oldPrice: 1699,
@@ -445,7 +445,7 @@ export const productData = [
   {
     id: 40,
     name: 'New Balance Fresh Foam 1080 V11 Running Shoe',
-    img: 'https://m.media-amazon.com/images/I/71MWbSVBkdL._AC_UL320_.jpg',
+    img: 'https://m.media-amazon.com/images/I/71CmnVytluL._AC_UL320_.jpg',
     size: 8,
     price: 3499,
     oldPrice: 3699,
@@ -459,7 +459,7 @@ export const productData = [
   {
     id: 41,
     name: 'Nike React Infinity Run Flyknit Running Shoe',
-    img: 'https://m.media-amazon.com/images/I/81dbMvpaG0L._AC_UL320_.jpg',
+    img: 'https://m.media-amazon.com/images/I/71CmnVytluL._AC_UL320_.jpg',
     size: 9,
     price: 3199,
     oldPrice: 3399,
@@ -472,7 +472,7 @@ export const productData = [
   {
     id: 42,
     name: 'Puma RS-X3 Puzzle Sneaker',
-    img: 'https://m.media-amazon.com/images/I/71fyf6sOfmL._AC_UL320_.jpg',
+    img: 'https://m.media-amazon.com/images/I/71uuRkLMixL._AC_UL320_.jpg',
     size: 8,
     price: 2499,
     oldPrice: 2699,
@@ -485,7 +485,7 @@ export const productData = [
   {
     id: 43,
     name: 'Adidas Ultraboost 21 Running Shoe',
-    img: 'https://m.media-amazon.com/images/I/81Vz3v4RqZL._AC_UL320_.jpg',
+    img: 'https://m.media-amazon.com/images/I/819t4B2jroL._AC_UL320_.jpg',
     size: 10,
     price: 3599,
     oldPrice: 3799,
@@ -509,7 +509,7 @@ export const productData = [
   {
     id: 45,
     name: 'Skechers DLites Memory Foam Sneaker',
-    img: 'https://m.media-amazon.com/images/I/71Q3tzsXOeL._AC_UL320_.jpg',
+    img: 'https://m.media-amazon.com/images/I/512K9c1iIaL._AC_UL320_.jpg',
     size: 7,
     price: 1999,
     oldPrice: 2199,
@@ -521,7 +521,7 @@ export const productData = [
   {
     id: 46,
     name: 'New Balance Fresh Foam Roav V1 Sneaker',
-    img: 'https://m.media-amazon.com/images/I/71nJrWy1zxL._AC_UL320_.jpg',
+    img: 'https://m.media-amazon.com/images/I/512K9c1iIaL._AC_UL320_.jpg',
     size: 8,
     price: 2799,
     oldPrice: 2999,
@@ -533,7 +533,7 @@ export const productData = [
   {
     id: 47,
     name: 'Fila Disruptor II Sneaker',
-    img: 'https://m.media-amazon.com/images/I/71lLhAGJ2RL._AC_UL320_.jpg',
+    img: 'https://m.media-amazon.com/images/I/512K9c1iIaL._AC_UL320_.jpg',
     size: 9,
     price: 1699,
     oldPrice: 1899,

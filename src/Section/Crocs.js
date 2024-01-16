@@ -1,71 +1,151 @@
-import React,{useState,useContext} from 'react';
+// import React,{useState,useContext} from 'react';
+// import MyContext from '../Components/MyContext';
+// import Category from '../Components/Category';
+// import { productData } from '../Assets/productData';
+// import { Link } from 'react-router-dom';
+// import './Sections.css';
+// import Navbar from '../Components/Navbar';
+
+// function Crocs() {
+//   const {
+//     cartItems,
+//     setCartItems,
+//     setProductDetail, 
+//   } = useContext(MyContext);
+
+//   const [selectedSize, setSelectedSize] = useState(null);
+
+//   const crocsProducts = productData.filter(
+//     (item) => item.brand === 'crocs' && (!selectedSize || item.size === selectedSize)
+//   );
+
+//   const handleSizeClick = (size) => {
+//     setSelectedSize(size === selectedSize ? null : size);
+//   };
+//   const handleAddToCart = (item) => {
+//     const existingItem = cartItems.find((cartItem) => cartItem.id === item.id);
+  
+//     if (existingItem) {
+//       alert('Item already added to cart');
+//     } else {
+//       setCartItems((prevCartItems) => [...prevCartItems, { ...item, quantity: 1 }]);
+//       setTimeout(() => {
+//         alert('Item added to cart');
+//       }, 500); // Delay in milliseconds (adjust as needed)
+//     }
+//   };
+//   const handleItemClick = (item) => {
+//     setProductDetail([item]);
+//   };
+//   return (
+//     <>
+//     <Navbar/>
+   
+//      <div className='men-container'>
+
+// <Category onSizeClick={handleSizeClick} selectedSize={selectedSize} />  
+// <div className='section-right'>
+//   {crocsProducts.map((item, i) => (
+//     <div key={i} className='item'>
+//       <p className='section-name'>{item.name}</p>
+//       <Link  key={i}  onClick={() => handleItemClick(item)} to='/productdetail'><img className='section-img' src={item.img} alt={item.name} /></Link>
+//       <h6 className='section-size'>Size {item.size}</h6>
+//       <h4 className='section-price'>Price {item.price}</h4>
+//       <button className='section-btn' onClick={()=>handleAddToCart(item)}>Add to Cart</button>
+//     </div>
+//   ))}
+// </div>
+// </div>
+//     </>
+   
+//   );
+// }
+
+// export default Crocs;
+// Crocs.js
+import React, { useState, useContext } from 'react';
 import MyContext from '../Components/MyContext';
 import Category from '../Components/Category';
-import Banner from '../Components/Banner';
 import { productData } from '../Assets/productData';
 import { Link } from 'react-router-dom';
 import './Sections.css';
 import Navbar from '../Components/Navbar';
+import UserAccount from '../Components/UserAccount';
+
+
 
 function Crocs() {
-  const {
-    cartItems,
-    setCartItems,
-    setProductDetail, 
-  } = useContext(MyContext);
-
+  const { cartItems,
+     setCartItems,
+      setProductDetail, 
+      productDataState,
+      storeEmail,
+      showUserDetails,
+      setShowUserDetails,
+    setUserEmail,
+    userEmail
+   } = useContext(MyContext);
   const [selectedSize, setSelectedSize] = useState(null);
-
-  const crocsProducts = productData.filter(
-    (item) => item.brand === 'crocs' && (!selectedSize || item.size === selectedSize)
+ 
+  const crocsProducts = productDataState.filter(
+    (item) => item.brand === 'adidas' && (!selectedSize || item.size === selectedSize)
   );
+  const handleToggleUserDetails = (email) => {
+    setUserEmail(email);
+    setShowUserDetails(!showUserDetails);
+   
+  };
 
   const handleSizeClick = (size) => {
     setSelectedSize(size === selectedSize ? null : size);
   };
   const handleAddToCart = (item) => {
-    // Check if the item is already in the cart
     const existingItem = cartItems.find((cartItem) => cartItem.id === item.id);
   
+    if (!storeEmail) {
+      alert('Please login to add items to the cart.');
+      return;
+    }
+  
     if (existingItem) {
-
-      setCartItems((prevCartItems) =>
-        prevCartItems.map((cartItem) =>
-          cartItem.id === item.id
-            ? { ...cartItem, quantity: cartItem.quantity + 1 }
-            : cartItem
-        )
-      );
+      alert('Item already added to cart');
     } else {
-   
       setCartItems((prevCartItems) => [...prevCartItems, { ...item, quantity: 1 }]);
+      setTimeout(() => {
+        alert('Item added to cart');
+      }, 500); 
     }
   };
+
   const handleItemClick = (item) => {
     setProductDetail([item]);
   };
+
   return (
     <>
-    <Navbar/>
-    <Banner />
-     <div className='men-container'>
-
-<Category onSizeClick={handleSizeClick} selectedSize={selectedSize} />  
-<div className='section-right'>
-  {crocsProducts.map((item, i) => (
-    <div key={i} className='item'>
-      <p className='section-name'>{item.name}</p>
-      <Link  key={i}  onClick={() => handleItemClick(item)} to='/productdetail'><img className='section-img' src={item.img} alt={item.name} /></Link>
-      <h6 className='section-size'>Size {item.size}</h6>
-      <h4 className='section-price'>Price {item.price}</h4>
-      <button className='section-btn' onClick={()=>handleAddToCart(item)}>Add to Cart</button>
-    </div>
-  ))}
-</div>
-</div>
+      <Navbar onToggleUserDetails={handleToggleUserDetails} />
+      {showUserDetails && <UserAccount email={userEmail}  />}
+      <div className='men-container'>
+        <Category onSizeClick={handleSizeClick} selectedSize={selectedSize} />
+        <div className='section-right'>
+          {crocsProducts.map((item, i) => (
+            <div key={i} className='item'>
+              <p className='section-name'>{item.name}</p>
+              <Link key={i} onClick={() => handleItemClick(item)} to='/productdetail'>
+                <img className='section-img' src={item.img} alt={item.name} />
+              </Link>
+              <h6 className='section-size'>Size {item.size}</h6>
+              <h4 className='section-price'>Price {item.price}</h4>
+              <button className='section-btn' onClick={() => handleAddToCart(item)}>
+                Add to Cart
+              </button>
+            </div>
+          ))}
+        </div>
+      </div>
     </>
-   
   );
 }
 
 export default Crocs;
+

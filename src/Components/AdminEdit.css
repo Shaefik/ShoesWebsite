@@ -1,0 +1,22 @@
+
+
+.input-name{
+    width: 10px;
+    display: flex;
+    
+  }
+label{
+    display: flex;
+    margin-left: 10px;
+}
+section{
+    display: flex;
+    margin: 20px;
+}
+  
+select{
+    margin-left: 10x;
+}
+option{
+    margin-left: 10px;
+}

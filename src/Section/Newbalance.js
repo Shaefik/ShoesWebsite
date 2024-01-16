@@ -1,43 +1,53 @@
 import React,{useState,useContext} from 'react';
 import MyContext from '../Components/MyContext';
 import Category from '../Components/Category';
-import Banner from '../Components/Banner'
 import { productData } from '../Assets/productData';
 import { Link } from 'react-router-dom';
 import './Sections.css';
 import Navbar from '../Components/Navbar';
+import UserAccount from '../Components/UserAccount';
 
 function Newbalance() {
   const {
     cartItems,
     setCartItems,
     setProductDetail, 
+    storeEmail,
+    productDataState,
+    showUserDetails,
+    setShowUserDetails,
+    setUserEmail,
+    userEmail
   } = useContext(MyContext);
   const [selectedSize, setSelectedSize] = useState(null);
 
-  const newbalanceProducts = productData.filter(
+  const newbalanceProducts = productDataState.filter(
     (item) => item.brand === 'newbalance' && (!selectedSize || item.size === selectedSize)
   );
+  const handleToggleUserDetails = (email) => {
+    setUserEmail(email);
+    setShowUserDetails(!showUserDetails);
+   
+  };
 
   const handleSizeClick = (size) => {
     setSelectedSize(size === selectedSize ? null : size);
   };
   const handleAddToCart = (item) => {
-    // Check if the item is already in the cart
     const existingItem = cartItems.find((cartItem) => cartItem.id === item.id);
   
+    if (!storeEmail) {
+      alert('Please login to add items to the cart.');
+      return;
+    }
+  
     if (existingItem) {
-
-      setCartItems((prevCartItems) =>
-        prevCartItems.map((cartItem) =>
-          cartItem.id === item.id
-            ? { ...cartItem, quantity: cartItem.quantity + 1 }
-            : cartItem
-        )
-      );
+      alert('Item already added to cart');
     } else {
-   
       setCartItems((prevCartItems) => [...prevCartItems, { ...item, quantity: 1 }]);
+      setTimeout(() => {
+        alert('Item added to cart');
+      }, 500); 
     }
   };
   const handleItemClick = (item) => {
@@ -46,8 +56,8 @@ function Newbalance() {
 
   return (
     <>
-    <Navbar/>
-    <Banner/>
+    <Navbar onToggleUserDetails={handleToggleUserDetails} />
+      {showUserDetails && <UserAccount email={userEmail}  />}
     <div className='men-container'>
       <Category onSizeClick={handleSizeClick} selectedSize={selectedSize} />  
       <div className='section-right'>

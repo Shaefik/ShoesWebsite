@@ -1,0 +1,34 @@
+.userdetail {
+  width: 200px;
+  height: 130px;
+  position: absolute;
+  top: 80px; /* Adjust the top position as needed */
+  right: 70px; /* Adjust the right position as needed */
+  background-color: white;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.logout-btn {
+  color: white;
+  width: 150px; /* Adjust the width as needed */
+  height: 30px;
+  background-color: black;
+}
+
+.login-btn {
+  color: white;
+}
+
+.signup-txt {
+  color: gray;
+}
+
+.signup-btn {
+  color: gray;
+  text-decoration: underline; /* Add underline to the "Sign up" link */
+}

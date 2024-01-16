@@ -4,26 +4,35 @@ import {  useNavigate } from 'react-router-dom'
 import MyContext from './MyContext'
 
 function Signup() {
+
     const[name,setName] = useState('')
     const[email,setEmail] = useState('')
     const[password,setPassword] = useState('')
     const[cnfmPassword,setCnfmPassword] = useState('')
     const[error,setError] = useState('')
-    const {clientData,setClientData} = useContext(MyContext)
+    const {clientData,setClientData,loginData,setLoginData,setStoreEmail} = useContext(MyContext)
+ 
     const nav = useNavigate()
     function handleSubmit() {
       if (!name || !email || !password || !cnfmPassword) {
-        setError(`All fields are required`);
+        setError('All fields are required');
       } else if (password !== cnfmPassword) {
-        setError(`Password doesn't matches`);
+        setError("Passwords don't match");
       } else {
+        const nextId = clientData.length +1
+        const newUser = { id:nextId, user: name, email, password };
     
-        setClientData({ name, email, password });
-        console.log(clientData)
-       
-        nav('/home')
+        setClientData((prevClientData) => [...prevClientData, newUser]);
+    
+        setLoginData({ email });
+        setStoreEmail(email)
+      
+    
+        nav('/home');
       }
     }
+    
+    
     
 
   return (

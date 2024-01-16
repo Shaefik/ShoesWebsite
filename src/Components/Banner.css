@@ -14,7 +14,7 @@ img {
 }
 
 .banner-container img:not(:first-child) {
-  margin-left: -100%; /* Overlap images to the left */
+  margin-left: -100%; 
 }
 
 .banner-container img.inactive {

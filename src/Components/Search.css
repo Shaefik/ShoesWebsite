@@ -1,0 +1,22 @@
+
+.search-contain {
+    display: flex;
+    padding-left: 30%;
+  /* Adjust the gap according to your preference */
+}
+
+.search-box {
+    width: 300px; /* Adjust the width according to your preference */
+ 
+    height: 40px;
+    margin-bottom: 20px;/* Adjust the margin according to your preference */
+}
+
+.search-btn {
+    color: white;
+    background-color: black;
+    padding: 8px 12px; 
+    height: 40px;
+    margin-top: 7px;
+    width: 130px;/* Adjust the padding according to your preference */
+}

@@ -12,7 +12,7 @@ function Banner() {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % bannerImages.length);
-    }, 5000); // Change image every 5 seconds
+    }, 5000); 
 
     return () => clearInterval(intervalId); // Cleanup interval on component unmount
   }, []);
