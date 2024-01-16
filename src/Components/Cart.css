@@ -5,3 +5,20 @@
 #del-icon:hover{
     color: rgb(216, 69, 69);
 }
+.minus{
+    color: white;
+    background-color: black;
+    margin-right: 2px;
+    border: none;
+}
+.plus{
+    color: white;
+    background-color: black;
+    margin-left: 2px;
+    border: none;
+}
+.buy-now-btn{
+    color: white;
+    background-color: black;
+    border: none;
+}
