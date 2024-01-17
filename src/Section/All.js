@@ -58,25 +58,34 @@ function All() {
       }, 500); 
     }
   };
+  const isItemLiked = (item) => Array.isArray(liked) && liked.some((likedItem) => likedItem.id === item.id);
+
   
-  const handleLike = (item)=>{
-    const itemId = item.id
-    setLikedItemsState((prevLikedItemState)=>({
-       ...prevLikedItemState,[itemId]:!prevLikedItemState[itemId]
-    }))
-    const isLiked = liked.some((like)=>like.id ===itemId)
-    if(isLiked){
-      setLiked((prevLiked)=>prevLiked.filter((like)=>like.id !== itemId))
-
-    }else{
-      setLiked((prevLiked)=>[...prevLiked,item])
+  const handleLike = (item) => {
+    const itemId = item.id;
+  
+    // Check if the user is logged in
+    if (!storeEmail) {
+      alert('Please login to like items.');
+      return;
     }
-    console.log(liked)
-   
-
-  }
-  const isItemLiked =(item )=>liked.some((likedItem)=>likedItem.id === item.id)
- 
+  
+    setLikedItemsState((prevLikedItemState) => ({
+      ...prevLikedItemState,
+      [itemId]: !prevLikedItemState[itemId],
+    }));
+  
+    const isLiked = liked.some((like) => like.id === itemId);
+  
+    if (isLiked) {
+      setLiked((prevLiked) => prevLiked.filter((like) => like.id !== itemId));
+    } else {
+      setLiked((prevLiked) => [...prevLiked, item]);
+    }
+  
+    console.log(liked);
+  };
+  
   
   
   const handleItemClick =(item )=>{

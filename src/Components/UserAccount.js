@@ -72,7 +72,8 @@ const UserAccount = () => {
    
     currentLogin,
     setCurrentLogin,
-    storeEmail,setStoreEmail
+    storeEmail,setStoreEmail,
+    liked,setLiked
     
     
   } = useContext(MyContext);
@@ -90,6 +91,7 @@ const UserAccount = () => {
     setLoginData(currentLogin);
     setStoreEmail('')
     alert('Logout Successful')
+    setLiked([])
    
     
 
