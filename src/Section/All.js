@@ -113,17 +113,17 @@ function All() {
                 <h2>{item.price}</h2>
               </span>
               <div className='like-n-cart'>
-              <button className='section-btn' onClick={() => handleAddToCart(item)}>
-                Add to Cart
-              </button>
-            
-              <i
-            className={`fa fa-heart ${isItemLiked(item) ? 'liked' : ''}`}
-            id="heart"
-            onClick={() => handleLike(item)}
-          ></i>
+                <button className='section-btn' onClick={() => handleAddToCart(item)}>
+                  Add to Cart
+                    </button>
+                  
+                    <i
+                  className={`fa fa-heart ${isItemLiked(item) ? 'liked' : ''}`}
+                  id="heart"
+                  onClick={() => handleLike(item)}
+                ></i>
 
-              </div>
+                  </div>
              
            
           

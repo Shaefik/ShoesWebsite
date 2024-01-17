@@ -18,12 +18,15 @@ function Women() {
     showUserDetails,
     setShowUserDetails,
     setUserEmail,
-    userEmail
+    userEmail,
+    liked,setLiked
   } = useContext(MyContext);
 
 
 
   const [selectedSize, setSelectedSize] = useState(null);
+  const [likedItemsState, setLikedItemsState] = useState({});
+
  
 
 
@@ -56,6 +59,23 @@ function Women() {
       }, 500); 
     }
   };
+  const handleLike = (item)=>{
+    const itemId = item.id
+    setLikedItemsState((prevLikedItemState)=>({
+       ...prevLikedItemState,[itemId]:!prevLikedItemState[itemId]
+    }))
+    const isLiked = liked.some((like)=>like.id ===itemId)
+    if(isLiked){
+      setLiked((prevLiked)=>prevLiked.filter((like)=>like.id !== itemId))
+
+    }else{
+      setLiked((prevLiked)=>[...prevLiked,item])
+    }
+    console.log(liked)
+   
+
+  }
+  const isItemLiked =(item )=>liked.some((likedItem)=>likedItem.id === item.id)
   const handleItemClick = (item) => {
     // Set the clicked item details to ProductDetail
     setProductDetail([item]);
@@ -78,9 +98,18 @@ function Women() {
                 <h5> {item.oldPrice}</h5>
                 <h2>{item.price}</h2>
               </span>
-              <button className='section-btn' onClick={() => handleAddToCart(item)}>
-                Add to Cart
-              </button>
+              <div className='like-n-cart'>
+                <button className='section-btn' onClick={() => handleAddToCart(item)}>
+                  Add to Cart
+                    </button>
+                  
+                    <i
+                  className={`fa fa-heart ${isItemLiked(item) ? 'liked' : ''}`}
+                  id="heart"
+                  onClick={() => handleLike(item)}
+                ></i>
+
+                  </div>
           </div>
 
         ))}

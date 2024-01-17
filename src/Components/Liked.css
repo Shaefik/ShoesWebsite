@@ -1,0 +1,77 @@
+.section-right{
+    width: 80%;
+    margin: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    color: #000;
+}
+.section-right :hover{
+   border: 0.5px solid black;
+} 
+.section-right:hover{
+  color:black
+  ;
+  text-decoration: none;
+}
+.item {
+    width: calc(33% - 20px);
+    height: 400px; /* 3 items per row, adjust margin as needed */
+    margin: 10px; /* Adjust margin as needed */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    border: 0.9px solid lightgrey;
+  }
+  .item :hover{
+    border: none;
+  }
+ 
+  .section-img {
+    width: 200px; /* Make the image fill the container */
+    height: 200px; /* Maintain aspect ratio */
+  }
+  .section-btn {
+   
+    margin-top: 1px;
+    background-color: black;
+    height: 30px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    
+  }
+  .section-price{
+    margin: 5px 0;
+    font-weight: 610;
+  }
+  .section-size{
+    margin: 5px 0;
+    
+  }
+  .men-container {
+    display: flex;
+  }
+  .price-sec{
+    display: flex;
+  }
+  .price-sec h5{
+    color: rgb(61, 57, 57);
+    text-decoration: line-through;
+    margin-top: 10px;
+
+  }
+  .price-sec h2{
+    color: black;
+  }
+ #heart{
+  width: 40px;
+  height: 30px;
+  padding-left: 10%;
+ 
+
+  
+ }/* Inside your CSS file */
+.liked {
+  color: red;
+}

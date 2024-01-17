@@ -1,68 +1,4 @@
-// import React,{useState,useContext} from 'react';
-// import MyContext from '../Components/MyContext';
-// import Category from '../Components/Category';
-// import { productData } from '../Assets/productData';
-// import { Link } from 'react-router-dom';
-// import './Sections.css';
-// import Navbar from '../Components/Navbar';
 
-// function Crocs() {
-//   const {
-//     cartItems,
-//     setCartItems,
-//     setProductDetail, 
-//   } = useContext(MyContext);
-
-//   const [selectedSize, setSelectedSize] = useState(null);
-
-//   const crocsProducts = productData.filter(
-//     (item) => item.brand === 'crocs' && (!selectedSize || item.size === selectedSize)
-//   );
-
-//   const handleSizeClick = (size) => {
-//     setSelectedSize(size === selectedSize ? null : size);
-//   };
-//   const handleAddToCart = (item) => {
-//     const existingItem = cartItems.find((cartItem) => cartItem.id === item.id);
-  
-//     if (existingItem) {
-//       alert('Item already added to cart');
-//     } else {
-//       setCartItems((prevCartItems) => [...prevCartItems, { ...item, quantity: 1 }]);
-//       setTimeout(() => {
-//         alert('Item added to cart');
-//       }, 500); // Delay in milliseconds (adjust as needed)
-//     }
-//   };
-//   const handleItemClick = (item) => {
-//     setProductDetail([item]);
-//   };
-//   return (
-//     <>
-//     <Navbar/>
-   
-//      <div className='men-container'>
-
-// <Category onSizeClick={handleSizeClick} selectedSize={selectedSize} />  
-// <div className='section-right'>
-//   {crocsProducts.map((item, i) => (
-//     <div key={i} className='item'>
-//       <p className='section-name'>{item.name}</p>
-//       <Link  key={i}  onClick={() => handleItemClick(item)} to='/productdetail'><img className='section-img' src={item.img} alt={item.name} /></Link>
-//       <h6 className='section-size'>Size {item.size}</h6>
-//       <h4 className='section-price'>Price {item.price}</h4>
-//       <button className='section-btn' onClick={()=>handleAddToCart(item)}>Add to Cart</button>
-//     </div>
-//   ))}
-// </div>
-// </div>
-//     </>
-   
-//   );
-// }
-
-// export default Crocs;
-// Crocs.js
 import React, { useState, useContext } from 'react';
 import MyContext from '../Components/MyContext';
 import Category from '../Components/Category';
@@ -83,9 +19,12 @@ function Crocs() {
       showUserDetails,
       setShowUserDetails,
     setUserEmail,
-    userEmail
+    userEmail,
+    liked,setLiked
    } = useContext(MyContext);
   const [selectedSize, setSelectedSize] = useState(null);
+  const [likedItemsState, setLikedItemsState] = useState({});
+
  
   const crocsProducts = productDataState.filter(
     (item) => item.brand === 'adidas' && (!selectedSize || item.size === selectedSize)
@@ -116,6 +55,25 @@ function Crocs() {
       }, 500); 
     }
   };
+  const handleLike = (item)=>{
+    const itemId = item.id
+    setLikedItemsState((prevLikedItemState)=>({
+       ...prevLikedItemState,[itemId]:!prevLikedItemState[itemId]
+    }))
+    const isLiked = liked.some((like)=>like.id ===itemId)
+    if(isLiked){
+      setLiked((prevLiked)=>prevLiked.filter((like)=>like.id !== itemId))
+
+    }else{
+      setLiked((prevLiked)=>[...prevLiked,item])
+    }
+    console.log(liked)
+   
+
+  }
+  const isItemLiked =(item )=>liked.some((likedItem)=>likedItem.id === item.id)
+ 
+  
 
   const handleItemClick = (item) => {
     setProductDetail([item]);
@@ -136,9 +94,18 @@ function Crocs() {
               </Link>
               <h6 className='section-size'>Size {item.size}</h6>
               <h4 className='section-price'>Price {item.price}</h4>
-              <button className='section-btn' onClick={() => handleAddToCart(item)}>
-                Add to Cart
-              </button>
+              <div className='like-n-cart'>
+                <button className='section-btn' onClick={() => handleAddToCart(item)}>
+                  Add to Cart
+                    </button>
+                  
+                    <i
+                  className={`fa fa-heart ${isItemLiked(item) ? 'liked' : ''}`}
+                  id="heart"
+                  onClick={() => handleLike(item)}
+                ></i>
+
+                  </div>
             </div>
           ))}
         </div>
