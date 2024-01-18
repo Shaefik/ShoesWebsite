@@ -3,18 +3,33 @@ import MyContext from './MyContext';
 import Navbar from './Navbar';
 import { Nav } from 'react-bootstrap';
 import './Liked.css';
+import UserAccount from '../Components/UserAccount';
+
 
 function Liked() {
-  const { liked, setLiked } = useContext(MyContext);
+  const { liked, setLiked,
+  setUserEmail,
+setShowUserDetails,
+showUserDetails,
+userEmail,
+
+ } = useContext(MyContext);
 
   function handleDislike(itemId) {
     const updatedLiked = liked.filter((item) => item.id !== itemId);
     setLiked(updatedLiked);
   }
+  const handleToggleUserDetails = (email) => {
+    setUserEmail(email);
+    setShowUserDetails(!showUserDetails);
+   
+  };
+
 
   return (
     <div>
-      <Navbar />
+       <Navbar onToggleUserDetails={handleToggleUserDetails} />
+      {showUserDetails && <UserAccount email={userEmail}  />}
       <>
         {liked.length > 0 ? (
           liked.map((item) => (

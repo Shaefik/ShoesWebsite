@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import MyContext from './MyContext';
+import './Admin.css'
 
 
 function Admin() {
@@ -77,8 +78,8 @@ function Admin() {
               <h4>New Price: {data.price}</h4>
               <h4>Size: {data.size}</h4>
               <h5>Description: {data.description}</h5>
-              <button onClick={() => handleDel(data.id)}>Del Product</button>
-              <button onClick={() => setSelectedProduct(data)}>Edit</button>
+              <button onClick={() => handleDel(data.id)}className='del-btn' >Del Product</button>
+              <button onClick={() => setSelectedProduct(data)} className='edit-btn'>Edit</button>
 
               {selectedProduct && selectedProduct.id === data.id && (
                 <div>
@@ -130,7 +131,7 @@ function Admin() {
                   <option>9</option>
                     
                   </select>
-                  <button onClick={handleEdit}>Save Changes</button>
+                  <button onClick={handleEdit} className='save-btn'>Save Changes</button>
                 </div>
               )}
               <hr />

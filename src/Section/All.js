@@ -3,7 +3,6 @@ import React, { useContext, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Category from '../Components/Category';
 import Banner from '../Components/Banner';
-import { productData } from '../Assets/productData';
 import './Sections.css';
 import MyContext from '../Components/MyContext';
 import Navbar from '../Components/Navbar';
@@ -64,7 +63,7 @@ function All() {
   const handleLike = (item) => {
     const itemId = item.id;
   
-    // Check if the user is logged in
+   
     if (!storeEmail) {
       alert('Please login to like items.');
       return;

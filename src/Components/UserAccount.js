@@ -1,58 +1,4 @@
-// import React, { useContext, useState,useEffect } from 'react';
-// import MyContext from './MyContext';
-// import { Link } from 'react-router-dom';
-// import './UserAccount.css';
 
-// const UserAccount = () => {
-  
-//   const {
-//     loginData,
-//     setLoginData,
-//     setShowUserDetails,
-//     setUserEmail,
-//     setLogin,
-//     setCartItems,
-//     userEmail,
-//     currentLogin,
-//     setCurrentLogin
-//   } = useContext(MyContext);
-
-//   const [clickedLogout, setClickedLogout] = useState(false);
-
-//   const handleLogout = () => {
-//     setUserEmail('');
-//     setShowUserDetails(false);
-
-//     setLogin(false);
-//     setClickedLogout(!clickedLogout);
-//     setCurrentLogin('')
-//     setLoginData(currentLogin)
-//   };
-
-//   return (
-//     // <div className='userdetail'>
-//     //   {!clickedLogout  &&<span>{loginData.email}</span>}
-//     //   {/* {loginData.email ? ( */}
-//     //     <button className='logout-btn' onClick={handleLogout}>
-//     //       {clickedLogout ? (<>
-//     //         <Link to='/' className='login-btn'>Login </Link> 
-//     //         <p className='signup-txt'> Don't have an account?<Link to='/signup' className='signup-btn'><p>Sign up</p></Link>
-//     //       </p>
-//     //       </>
-
-//     //       )
-          
-//     //      : 'Logout'}
-//     //     </button>  
-     
-//     // </div>
-//     <>
-      
-//     </>
-//   );
-// };
-
-// export default UserAccount;
 import React, { useContext, useState, useEffect } from 'react';
 import MyContext from './MyContext';
 import { Link } from 'react-router-dom';
@@ -73,7 +19,9 @@ const UserAccount = () => {
     currentLogin,
     setCurrentLogin,
     storeEmail,setStoreEmail,
-    liked,setLiked
+    liked,setLiked,
+    cartItems,setCartItems
+    
     
     
   } = useContext(MyContext);
@@ -92,10 +40,12 @@ const UserAccount = () => {
     setStoreEmail('')
     alert('Logout Successful')
     setLiked([])
-   
-    
-
+    setCartItems([])
   };
+  setTimeout(() => {
+    setShowUserDetails(false);
+  }, 3000);
+
 
   return (
     <div className='userdetail'>
@@ -105,10 +55,8 @@ const UserAccount = () => {
           Logout
         </button>
       </>
-       
       ) : (
-        <>
-          
+        <> 
           <p className='signup-txt'>
             Don't have an account?
             <Link to='/signup' className='signup-btn'>
@@ -124,5 +72,4 @@ const UserAccount = () => {
     </div>
   );
 };
-
 export default UserAccount;
