@@ -3,7 +3,6 @@ import React, { useContext, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Category from '../Components/Category';
 import Banner from '../Components/Banner';
-import { productData } from '../Assets/productData';
 import './Sections.css';
 import MyContext from '../Components/MyContext';
 import Navbar from '../Components/Navbar';
@@ -58,25 +57,34 @@ function All() {
       }, 500); 
     }
   };
+  const isItemLiked = (item) => Array.isArray(liked) && liked.some((likedItem) => likedItem.id === item.id);
+
   
-  const handleLike = (item)=>{
-    const itemId = item.id
-    setLikedItemsState((prevLikedItemState)=>({
-       ...prevLikedItemState,[itemId]:!prevLikedItemState[itemId]
-    }))
-    const isLiked = liked.some((like)=>like.id ===itemId)
-    if(isLiked){
-      setLiked((prevLiked)=>prevLiked.filter((like)=>like.id !== itemId))
-
-    }else{
-      setLiked((prevLiked)=>[...prevLiked,item])
-    }
-    console.log(liked)
+  const handleLike = (item) => {
+    const itemId = item.id;
+  
    
-
-  }
-  const isItemLiked =(item )=>liked.some((likedItem)=>likedItem.id === item.id)
- 
+    if (!storeEmail) {
+      alert('Please login to like items.');
+      return;
+    }
+  
+    setLikedItemsState((prevLikedItemState) => ({
+      ...prevLikedItemState,
+      [itemId]: !prevLikedItemState[itemId],
+    }));
+  
+    const isLiked = liked.some((like) => like.id === itemId);
+  
+    if (isLiked) {
+      setLiked((prevLiked) => prevLiked.filter((like) => like.id !== itemId));
+    } else {
+      setLiked((prevLiked) => [...prevLiked, item]);
+    }
+  
+    console.log(liked);
+  };
+  
   
   
   const handleItemClick =(item )=>{
@@ -113,17 +121,17 @@ function All() {
                 <h2>{item.price}</h2>
               </span>
               <div className='like-n-cart'>
-              <button className='section-btn' onClick={() => handleAddToCart(item)}>
-                Add to Cart
-              </button>
-            
-              <i
-            className={`fa fa-heart ${isItemLiked(item) ? 'liked' : ''}`}
-            id="heart"
-            onClick={() => handleLike(item)}
-          ></i>
+                <button className='section-btn' onClick={() => handleAddToCart(item)}>
+                  Add to Cart
+                    </button>
+                  
+                    <i
+                  className={`fa fa-heart ${isItemLiked(item) ? 'liked' : ''}`}
+                  id="heart"
+                  onClick={() => handleLike(item)}
+                ></i>
 
-              </div>
+                  </div>
              
            
           

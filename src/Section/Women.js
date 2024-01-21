@@ -18,12 +18,15 @@ function Women() {
     showUserDetails,
     setShowUserDetails,
     setUserEmail,
-    userEmail
+    userEmail,
+    liked,setLiked
   } = useContext(MyContext);
 
 
 
   const [selectedSize, setSelectedSize] = useState(null);
+  const [likedItemsState, setLikedItemsState] = useState({});
+
  
 
 
@@ -56,6 +59,33 @@ function Women() {
       }, 500); 
     }
   };
+  const isItemLiked = (item) => Array.isArray(liked) && liked.some((likedItem) => likedItem.id === item.id);
+
+  
+  const handleLike = (item) => {
+    const itemId = item.id;
+  
+    // Check if the user is logged in
+    if (!storeEmail) {
+      alert('Please login to like items.');
+      return;
+    }
+  
+    setLikedItemsState((prevLikedItemState) => ({
+      ...prevLikedItemState,
+      [itemId]: !prevLikedItemState[itemId],
+    }));
+  
+    const isLiked = liked.some((like) => like.id === itemId);
+  
+    if (isLiked) {
+      setLiked((prevLiked) => prevLiked.filter((like) => like.id !== itemId));
+    } else {
+      setLiked((prevLiked) => [...prevLiked, item]);
+    }
+  
+    console.log(liked);
+  };
   const handleItemClick = (item) => {
     // Set the clicked item details to ProductDetail
     setProductDetail([item]);
@@ -78,9 +108,18 @@ function Women() {
                 <h5> {item.oldPrice}</h5>
                 <h2>{item.price}</h2>
               </span>
-              <button className='section-btn' onClick={() => handleAddToCart(item)}>
-                Add to Cart
-              </button>
+              <div className='like-n-cart'>
+                <button className='section-btn' onClick={() => handleAddToCart(item)}>
+                  Add to Cart
+                    </button>
+                  
+                    <i
+                  className={`fa fa-heart ${isItemLiked(item) ? 'liked' : ''}`}
+                  id="heart"
+                  onClick={() => handleLike(item)}
+                ></i>
+
+                  </div>
           </div>
 
         ))}

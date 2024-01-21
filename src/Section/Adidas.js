@@ -9,6 +9,7 @@ import UserAccount from '../Components/UserAccount';
 
 
 function Adidas() {
+  
   const {
     cartItems,
     setCartItems,
@@ -18,16 +19,22 @@ function Adidas() {
     setUserEmail,
     userEmail,
     showUserDetails,
-    setShowUserDetails
+    setShowUserDetails,
+   
+    edited,
+    editedProductDataState
     
   } = useContext(MyContext);
 
   const [selectedSize, setSelectedSize] = useState(null);
  
  
-  const adidasProducts = productDataState.filter(
-    (item) => item.brand === 'adidas' && (!selectedSize || item.size === selectedSize)
+  const displayProducts = edited ? editedProductDataState : productDataState;
+
+  const adidasProducts = displayProducts.filter(
+    (item) => (item.brand.toLowerCase() === 'adidas') && (!selectedSize || item.size === selectedSize)
   );
+  
 
   const handleToggleUserDetails = (email) => {
     setUserEmail(email);
@@ -58,6 +65,10 @@ function Adidas() {
     setProductDetail([item]);
   };
 
+  useEffect(()=>{
+    console.log(adidasProducts)
+  },[])
+  
   
   return (
     <>

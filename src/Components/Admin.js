@@ -1,10 +1,11 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext,useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import MyContext from './MyContext';
+import './Admin.css'
 
 
 function Admin() {
-  const { productDataState, setProductDataState } = useContext(MyContext);
+  const { productDataState, setProductDataState , editedProductDataState,setEditedProductDataState,edited,setEdited} = useContext(MyContext);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [newProduct, setNewProduct] = useState('');
   const [newImg, setNewImg] = useState('');
@@ -18,6 +19,7 @@ function Admin() {
     const updatedProductData = productDataState.filter((data) => data.id !== productId);
     setProductDataState(updatedProductData);
   };
+
 
   const handleEdit = () => {
    
@@ -37,10 +39,16 @@ function Admin() {
           : product
       );
       setProductDataState(updatedProducts);
+      setEditedProductDataState(updatedProducts)
+      setEdited(!edited)
+
 
       resetForm();
     }
   };
+  useEffect(()=>{
+    console.log('edited is::', editedProductDataState)
+  },[handleEdit])
 
   const resetForm = () => {
     setSelectedProduct(null);
@@ -57,6 +65,11 @@ function Admin() {
     <>
       <div>
         <div className="nav-admin">
+          <Link to='/all' >
+          <i class="fa fa-home" style={{ marginLeft: '40px', fontSize: '30px', color:'black',marginTop:'20px'  }} ></i>
+
+          </Link>
+
           <Link to="/addproduct">
             <button>Add Product</button>
             
@@ -77,8 +90,8 @@ function Admin() {
               <h4>New Price: {data.price}</h4>
               <h4>Size: {data.size}</h4>
               <h5>Description: {data.description}</h5>
-              <button onClick={() => handleDel(data.id)}>Del Product</button>
-              <button onClick={() => setSelectedProduct(data)}>Edit</button>
+              <button onClick={() => handleDel(data.id)}className='del-btn' >Del Product</button>
+              <button onClick={() => setSelectedProduct(data)} className='edit-btn'>Edit</button>
 
               {selectedProduct && selectedProduct.id === data.id && (
                 <div>
@@ -130,7 +143,7 @@ function Admin() {
                   <option>9</option>
                     
                   </select>
-                  <button onClick={handleEdit}>Save Changes</button>
+                  <button onClick={handleEdit} className='save-btn'>Save Changes</button>
                 </div>
               )}
               <hr />

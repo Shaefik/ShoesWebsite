@@ -1,7 +1,7 @@
 // AdminEdit.js
 import React, { useState, useContext } from 'react';
 import MyContext from './MyContext';
-import './AdminEdit.css'
+
 
 function AdminEdit({data}) {
   const {

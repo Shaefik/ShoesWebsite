@@ -28,7 +28,7 @@ function Signup() {
         setStoreEmail(email)
       
     
-        nav('/home');
+        nav('/all');
       }
     }
     

@@ -1,48 +1,4 @@
-// import React, { useState,useEffect } from 'react'
-// import { productData } from '../Assets/productData'
 
-// function Search() {
-//     const [searchQuery,setSearchQuery] = useState('')
-//     const [filtered,setFiltered] = useState(productData)
-//     const [results,setResults] = useState({})
-//     useEffect(()=>(
-//         console.log(results)
-//     ),[])
-//     function handleSearch(e){
-//         const query = e.target.value
-//         setSearchQuery(query)
-//         const filteredResults = productData.filter((data)=>{
-//             const {name,brand,gen} = data 
-//             return(
-//                 name.toLowerCase().includes(query.toLowerCase())||
-//                 brand.toLowerCase().includes(query.toLowerCase())||
-//                 gen.toLowerCase().includes(query.toLowerCase())
-//             )
-//         })
-//         setFiltered(filteredResults)
-//         setResults(filteredResults)
-//     }
-//   return (
-   
-
-    
-//     <div>
-//         {results.map((data)=>(
-//             <>
-        
-//             <input placeholder='search' type='text' value={searchQuery} />
-//             <button onClick={handleSearch}>Search</button>
-//             </>
-    
-
-//         ))}
-        
-//     </div>
-//   )
-// }
-
-// export default Search
-// Search.js
 
 import React, { useContext, useState } from 'react';
 import './Search.css'

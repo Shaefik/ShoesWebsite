@@ -17,13 +17,21 @@ function Newbalance() {
     showUserDetails,
     setShowUserDetails,
     setUserEmail,
-    userEmail
+    userEmail,
+    liked,setLiked,
+    edited,
+    editedProductDataState
   } = useContext(MyContext);
   const [selectedSize, setSelectedSize] = useState(null);
+  const [likedItemsState, setLikedItemsState] = useState({});
 
-  const newbalanceProducts = productDataState.filter(
-    (item) => item.brand === 'newbalance' && (!selectedSize || item.size === selectedSize)
+
+  const displayProducts = edited ? editedProductDataState : productDataState;
+
+  const newbalanceProducts = displayProducts.filter(
+    (item) => (item.brand.toLowerCase() === 'newbalance') && (!selectedSize || item.size === selectedSize)
   );
+  
   const handleToggleUserDetails = (email) => {
     setUserEmail(email);
     setShowUserDetails(!showUserDetails);
@@ -50,6 +58,33 @@ function Newbalance() {
       }, 500); 
     }
   };
+  const isItemLiked = (item) => Array.isArray(liked) && liked.some((likedItem) => likedItem.id === item.id);
+
+  
+  const handleLike = (item) => {
+    const itemId = item.id;
+  
+    // Check if the user is logged in
+    if (!storeEmail) {
+      alert('Please login to like items.');
+      return;
+    }
+  
+    setLikedItemsState((prevLikedItemState) => ({
+      ...prevLikedItemState,
+      [itemId]: !prevLikedItemState[itemId],
+    }));
+  
+    const isLiked = liked.some((like) => like.id === itemId);
+  
+    if (isLiked) {
+      setLiked((prevLiked) => prevLiked.filter((like) => like.id !== itemId));
+    } else {
+      setLiked((prevLiked) => [...prevLiked, item]);
+    }
+  
+    console.log(liked);
+  };
   const handleItemClick = (item) => {
     setProductDetail([item]);
   };
@@ -67,7 +102,18 @@ function Newbalance() {
             <Link  key={i}  onClick={() => handleItemClick(item)} to='/productdetail'><img className='section-img' src={item.img} alt={item.name} /></Link>
             <h6 className='section-size'>Size {item.size}</h6>
             <h4 className='section-price'>Price {item.price}</h4>
-            <button className='section-btn' onClick={()=>handleAddToCart(item)}>Add to Cart</button>
+            <div className='like-n-cart'>
+                <button className='section-btn' onClick={() => handleAddToCart(item)}>
+                  Add to Cart
+                    </button>
+                  
+                    <i
+                  className={`fa fa-heart ${isItemLiked(item) ? 'liked' : ''}`}
+                  id="heart"
+                  onClick={() => handleLike(item)}
+                ></i>
+
+                  </div>
           </div>
         ))}
       </div>
