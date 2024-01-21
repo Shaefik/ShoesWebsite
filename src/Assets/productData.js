@@ -2,7 +2,7 @@ export const productData = [
   {
     id: 1,
     name: 'Crocs Classic Marbled Clog WHI/Oxgn Clogs',
-    img: 'https://m.media-amazon.com/images/I/71yEy-lk9yL._AC_SR180,120_QL70_.jpg',
+    img: 'https://m.media-amazon.com/images/I/61JpfLHSlYL._AC_UL320_.jpg',
     size: 9,
     price: 2999,
     oldPrice: 3199,
@@ -497,7 +497,7 @@ export const productData = [
   {
     id: 44,
     name: 'Crocs Classic Clog',
-    img: 'https://m.media-amazon.com/images/I/71dJzDXZbFL._AC_UL320_.jpg',
+    img: 'https://m.media-amazon.com/images/I/31PQIQNua6L._AC_UL320_.jpg',
     size: 11,
     price: 2999,
     oldPrice: 3199,
