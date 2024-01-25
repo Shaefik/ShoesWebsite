@@ -1,5 +1,9 @@
 
+
 import React, { useContext,useState } from 'react';
+
+
+
 import { Link } from 'react-router-dom';
 import MyContext from './MyContext';
 import Navbar from './Navbar';
@@ -7,9 +11,11 @@ import UserAccount from './UserAccount';
 import './Cart.css';
 
 function Cart() {
+
   const { cartItems, setCartItems,setShowUserDetails,showUserDetails,userEmail,setUserEmail, userNow } = useContext(MyContext);
   const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
   const [itemToDelete, setItemToDelete] = useState(null);
+
 
 
  
@@ -70,7 +76,7 @@ function Cart() {
     <div>
       <Navbar onToggleUserDetails={handleToggleUserDetails} />
       {showUserDetails && <UserAccount email={userEmail}  />}
-    
+
 
       <h2>Your Cart {userCartItems.length}</h2>
       <table className='table'>

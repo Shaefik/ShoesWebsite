@@ -1,4 +1,8 @@
+
+
+
 #navbar-head {
+
   position:sticky;
   top: 0;
   width: 100%;
@@ -109,5 +113,6 @@ span {
   margin-left: 20px;
   margin-top: 20px;
 }
+
 
 
