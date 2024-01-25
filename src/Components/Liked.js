@@ -51,8 +51,8 @@ userEmail,
           <div className="backdrop-liked" />
           <div className="delete-confirmation-liked">
             <p>Are you sure you want to dislike this item?</p>
-            <button onClick={handleConfirmDislike}>Yes</button>
-            <button onClick={handleCancelDislike}>No</button>
+            <button onClick={handleConfirmDislike} className='yes-liked'>Yes</button>
+            <button onClick={handleCancelDislike} className='no-liked'>No</button>
           </div>
         </>
       )}

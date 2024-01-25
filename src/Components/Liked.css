@@ -92,13 +92,27 @@ padding-left: 10%;
 
 .navbar-head {
   position: relative;
-  backdrop-filter: blur(5px); /* Adjust the blur effect as needed */
-  z-index: 1000; /* Set a z-index less than delete-confirmation-liked */
+  backdrop-filter: blur(5px); 
+  z-index: 1000; 
 }
 
-/* Other existing styles for navbar-head and delete-confirmation-liked */
+
 
 
 .liked {
 color: red;
+}
+.yes-liked{
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 2px;
+}
+.no-liked{
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 2px;
+  margin-left: 3px;
+
 }

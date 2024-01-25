@@ -1,6 +1,7 @@
 import React,{useState,useContext, useEffect} from 'react'
 import './Signup.css'
 import {  useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import MyContext from './MyContext'
 
 function Signup() {
@@ -35,6 +36,7 @@ function Signup() {
       
     
         nav('/all');
+        alert(`You're All Set!!!`)
       }
     }
     
@@ -78,6 +80,7 @@ function Signup() {
          <button className='create-ac-btn' onClick={handleSubmit}>
               Create new account
          </button>
+         <Link to='/'><button className='login-for-signup'>Login</button></Link>
     </div>
   )
 }

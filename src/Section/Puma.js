@@ -6,6 +6,7 @@ import { productData } from '../Assets/productData';
 import './Sections.css';
 import Navbar from '../Components/Navbar';
 import UserAccount from '../Components/UserAccount';
+import Footer from '../Components/Footer';
 
 
 function Puma() {
@@ -119,6 +120,7 @@ function Puma() {
         ))}
       </div>
     </div>
+    <Footer/>
     </>
    
   );

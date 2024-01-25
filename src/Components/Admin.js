@@ -36,30 +36,29 @@ function Admin() {
     setShowDeleteConfirmation(false);
   };
   const handleEdit = () => {
-   
     if (selectedProduct) {
       const updatedProducts = productDataState.map((product) =>
         product.id === selectedProduct.id
           ? {
               ...product,
-              name: newProduct,
-              img: newImg,
-              brand: newBrand,
-              gen: editGen,
-              oldPrice: editOldPrice,
-              price: editNewPrice,
-              size: newSize,
+              name: newProduct || product.name,
+              img: newImg || product.img,
+              brand: newBrand || product.brand,
+              gen: editGen || product.gen,
+              oldPrice: editOldPrice || product.oldPrice,
+              price: editNewPrice || product.price,
+              size: newSize || product.size,
             }
           : product
       );
       setProductDataState(updatedProducts);
-      setEditedProductDataState(updatedProducts)
-      setEdited(!edited)
-
-
+      setEditedProductDataState(updatedProducts);
+      setEdited(!edited);
+  
       resetForm();
     }
   };
+  
   useEffect(()=>{
     console.log('edited is::', editedProductDataState)
   },[handleEdit])

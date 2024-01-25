@@ -90,7 +90,7 @@ function AdminAdd() {
       <option>Women</option>
 
     </select>
-    <button onClick={handleAddProduct}>Add Product</button>
+    <button onClick={handleAddProduct} className='add-btn-product'>Add Product</button>
     
     
 </div>

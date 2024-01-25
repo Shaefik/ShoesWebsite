@@ -8,6 +8,8 @@ import MyContext from '../Components/MyContext';
 import Navbar from '../Components/Navbar';
 import UserAccount from '../Components/UserAccount';
 import Search from '../Components/Search';
+import Footer from '../Components/Footer';
+
 
 function All() {
   const {
@@ -138,7 +140,10 @@ function All() {
             </div>
           ))}
         </div>
+        
+    
       </div>
+      <Footer/>
     </>
   );
 }

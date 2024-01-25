@@ -1,32 +1,35 @@
 import React,{useState,useContext,useEffect} from 'react';
 import MyContext from '../Components/MyContext';
 import Category from '../Components/Category';
-import { productData } from '../Assets/productData';
 import { Link } from 'react-router-dom';
 import './Sections.css';
 import Navbar from '../Components/Navbar';
 import UserAccount from '../Components/UserAccount';
+import Footer from '../Components/Footer';
 
 
 function Adidas() {
   
   const {
     cartItems,
-    setCartItems,
-    setProductDetail, 
-    storeEmail,
-    productDataState,
+     setCartItems,
+      setProductDetail, 
+      productDataState,
+      storeEmail,
+      showUserDetails,
+      setShowUserDetails,
     setUserEmail,
     userEmail,
-    showUserDetails,
-    setShowUserDetails,
-   
+    liked,setLiked,
+    editedProductDataState,
     edited,
-    editedProductDataState
+   
     
   } = useContext(MyContext);
 
   const [selectedSize, setSelectedSize] = useState(null);
+  const [likedItemsState, setLikedItemsState] = useState({});
+
  
  
   const displayProducts = edited ? editedProductDataState : productDataState;
@@ -61,6 +64,33 @@ function Adidas() {
       }, 500); 
     }
   };
+  const isItemLiked = (item) => Array.isArray(liked) && liked.some((likedItem) => likedItem.id === item.id);
+
+  const handleLike = (item) => {
+    const itemId = item.id;
+  
+    // Check if the user is logged in
+    if (!storeEmail) {
+      alert('Please login to like items.');
+      return;
+    }
+  
+    setLikedItemsState((prevLikedItemState) => ({
+      ...prevLikedItemState,
+      [itemId]: !prevLikedItemState[itemId],
+    }));
+  
+    const isLiked = liked.some((like) => like.id === itemId);
+  
+    if (isLiked) {
+      setLiked((prevLiked) => prevLiked.filter((like) => like.id !== itemId));
+    } else {
+      setLiked((prevLiked) => [...prevLiked, item]);
+    }
+  
+    console.log(liked);
+  };
+
   const handleItemClick = (item) => {
     setProductDetail([item]);
   };
@@ -85,11 +115,23 @@ function Adidas() {
       <Link  key={i}  onClick={() => handleItemClick(item)} to='/productdetail'><img className='section-img' src={item.img} alt={item.name} /></Link>
       <h6 className='section-size'>Size {item.size}</h6>
       <h4 className='section-price'>Price {item.price}</h4>
-      <button className='section-btn' onClick={()=>handleAddToCart(item)}>Add to Cart</button>
-    </div>
-  ))}
-</div>
-</div>
+      <div className='like-n-cart'>
+                <button className='section-btn' onClick={() => handleAddToCart(item)}>
+                  Add to Cart
+                    </button>
+                  
+                    <i
+                  className={`fa fa-heart ${isItemLiked(item) ? 'liked' : ''}`}
+                  id="heart"
+                  onClick={() => handleLike(item)}
+                ></i>
+
+                          </div>
+                      </div>
+                    ))}
+                  </div>
+                  </div>
+                  <Footer/>
     </>
    
   );

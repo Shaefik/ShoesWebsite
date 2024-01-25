@@ -103,7 +103,7 @@ select{
     color: white;
     background-color: black;
     border: none;
-    margin-left: 100px;
+    margin-left: 70px;
    
 }
 .no{
@@ -116,4 +116,10 @@ select{
 .confirm-msg{
     font-weight: 1000px;
     
+}
+.add-btn-product{
+    margin-left: 100px;
+    background-color: rgb(98, 230, 98);
+    color: white;
+    border: none;
 }

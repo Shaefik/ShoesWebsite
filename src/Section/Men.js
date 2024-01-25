@@ -8,6 +8,7 @@ import './Sections.css';
 import MyContext from '../Components/MyContext';
 import Navbar from '../Components/Navbar';
 import UserAccount from '../Components/UserAccount';
+import Footer from '../Components/Footer';
 
 
 function Men() {
@@ -140,6 +141,7 @@ function Men() {
           ))}
         </div>
       </div>
+      <Footer/>
     </>
   );
 }

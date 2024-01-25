@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import './Sections.css';
 import Navbar from '../Components/Navbar';
 import UserAccount from '../Components/UserAccount';
+import Footer from '../Components/Footer';
 
 
 
@@ -123,6 +124,7 @@ function Skechers() {
         ))}
       </div>
     </div>
+    <Footer/>
     </>
   
   );
