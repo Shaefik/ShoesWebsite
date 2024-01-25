@@ -88,3 +88,32 @@ select{
 #home-btn{
     font-size: 30px;
 }
+.delete-confirmation-admin{
+    top: 100px;
+    margin-left: 400px;
+    height: 100px;
+    width: 400px;
+    padding-left: 50px;
+    z-index: 1000;
+    position: sticky;
+    background-color:whitesmoke;
+ 
+}
+.yes{
+    color: white;
+    background-color: black;
+    border: none;
+    margin-left: 100px;
+   
+}
+.no{
+    color: white;
+    background-color: black;
+    border: none;
+    margin-left: 3px;
+
+}
+.confirm-msg{
+    font-weight: 1000px;
+    
+}

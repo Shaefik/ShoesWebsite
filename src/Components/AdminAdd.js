@@ -1,11 +1,10 @@
 import React,{useState,useEffect, useContext} from 'react'
 import './Admin.css'
-import { productData } from '../Assets/productData'
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import MyContext from './MyContext';
 function AdminAdd() {
     const {productDataState,setProductDataState, product,setProduct,imgUrl,setImgUrl,size,setSize,oldPrice,setOldPrice,newPrice,setNewPrice,selectBrand,setSelectBrand,selectGender,setSelectGender} = useContext(MyContext)
-
+    const nav = useNavigate();
     
    
   
@@ -21,7 +20,7 @@ function AdminAdd() {
         size: parseInt(size),
         price: parseInt(newPrice),
         oldPrice: parseInt(oldPrice),
-        brand: selectBrand.toLowerCase(),  // Convert to lowercase
+        brand: selectBrand.toLowerCase(),  
        gen: selectGender.toLowerCase(), 
       };
       
@@ -40,6 +39,8 @@ function AdminAdd() {
       setNewPrice(1999);
       setSelectBrand('');
       setSelectGender('');
+
+      nav('/admin')
       
     }
   return (

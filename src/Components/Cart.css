@@ -14,7 +14,7 @@
 .plus{
     color: white;
     background-color: black;
-    margin-left: 2px;
+    margin-left: 5px;
     border: none;
 }
 .buy-now-btn{
@@ -22,3 +22,31 @@
     background-color: black;
     border: none;
 }
+.delete-confirmation {
+    position: fixed;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    text-align: center;
+  }
+  
+  .delete-confirmation button {
+    margin: 5px;
+    padding: 5px 10px;
+  }
+  .backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1000px;
+    background-color: rgba(233, 228, 228, 0.5);
+    backdrop-filter: blur(5px); /* Adjust the blur effect as needed */
+    z-index: 999;
+  }
+  

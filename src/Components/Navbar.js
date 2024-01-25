@@ -29,8 +29,11 @@ function Navbar({ onToggleUserDetails }) {
 
 
   return (
-    <div className="navbar-head">
+    <div id="navbar-head">
+      <Link to='/all'>
       <span className='head'>My Ecom</span>
+      </Link>
+  
       <div className='tags-head'>
         <div className='tags'> 
           <Link to='/all' className='links' >All</Link>
@@ -67,6 +70,7 @@ function Navbar({ onToggleUserDetails }) {
         <div>
          
         </div>
+
 
         <i className='fa' id='admin-icon' onClick={toggleUserDetails}>&#xf2bd;</i>
       

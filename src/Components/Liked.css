@@ -71,7 +71,34 @@ padding-left: 10%;
 
 
 
-}/* Inside your CSS file */
+}
+.delete-confirmation-liked {
+
+  position:sticky;
+  z-index: 1000;
+  top: 140px;
+ width: 400px;
+  margin-left: 600px;
+ 
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+ 
+  text-align: center;
+}
+
+
+.navbar-head {
+  position: relative;
+  backdrop-filter: blur(5px); /* Adjust the blur effect as needed */
+  z-index: 1000; /* Set a z-index less than delete-confirmation-liked */
+}
+
+/* Other existing styles for navbar-head and delete-confirmation-liked */
+
+
 .liked {
 color: red;
 }

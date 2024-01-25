@@ -1,6 +1,7 @@
 import React, { useState, useContext,useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import MyContext from './MyContext';
+
 import './Admin.css'
 
 
@@ -14,13 +15,26 @@ function Admin() {
   const [editNewPrice, setEditNewPrice] = useState(3999);
   const [newBrand, setNewBrand] = useState('');
   const [editGen, setEditGen] = useState('');
+  const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
+  const [itemToDelete, setItemToDelete] = useState(null);
+
 
   const handleDel = (productId) => {
-    const updatedProductData = productDataState.filter((data) => data.id !== productId);
-    setProductDataState(updatedProductData);
+    
+    setItemToDelete(productId);
+    setShowDeleteConfirmation(true)
   };
+  const handleConfirmDel = ()=>{
+    const updatedProductData = productDataState.filter((data) => data.id !== itemToDelete);
+    setProductDataState(updatedProductData);
+    setShowDeleteConfirmation(false);
 
 
+  }
+  const handleCancelDelete = () => {
+    setItemToDelete(null);
+    setShowDeleteConfirmation(false);
+  };
   const handleEdit = () => {
    
     if (selectedProduct) {
@@ -78,6 +92,17 @@ function Admin() {
           <button>User Details</button>
           </Link>
         </div>
+        {showDeleteConfirmation && (
+        <>
+    
+        <div className="delete-confirmation-admin">
+          <p className='confirm-msg'>Are you sure you want to delete this item?</p>
+          <button onClick={handleConfirmDel} className='yes'>Yes</button>
+          <button onClick={handleCancelDelete} className='no'>No</button>
+        </div>
+        </>
+       
+      )}
         <div>
           {productDataState.map((data) => (
             <div key={data.id}>

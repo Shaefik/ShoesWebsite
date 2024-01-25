@@ -1,4 +1,4 @@
-import React,{useState,useContext} from 'react'
+import React,{useState,useContext, useEffect} from 'react'
 import './Signup.css'
 import {  useNavigate } from 'react-router-dom'
 import MyContext from './MyContext'
@@ -10,14 +10,20 @@ function Signup() {
     const[password,setPassword] = useState('')
     const[cnfmPassword,setCnfmPassword] = useState('')
     const[error,setError] = useState('')
-    const {clientData,setClientData,loginData,setLoginData,setStoreEmail} = useContext(MyContext)
- 
+    const {clientData,setClientData,loginData,setLoginData,setStoreEmail,storeEmail} = useContext(MyContext)
+
+    
     const nav = useNavigate()
+    const existUser = clientData.filter((user) => user.email === email).length > 0;
     function handleSubmit() {
       if (!name || !email || !password || !cnfmPassword) {
         setError('All fields are required');
       } else if (password !== cnfmPassword) {
         setError("Passwords don't match");
+      }
+      else if(existUser){
+        setError('Email already exist!! ')
+
       } else {
         const nextId = clientData.length +1
         const newUser = { id:nextId, user: name, email, password };

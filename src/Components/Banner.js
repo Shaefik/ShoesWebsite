@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Banner.css';
 
 const bannerImages = [
-  'https://kxadmin.metroshoes.com/banner/1702908616METRO-SHOES_DESKTOP-BANNER_DECEMBER_MEN.jpg',
+  'https://d1csarkz8obe9u.cloudfront.net/posterpreviews/shoe-banner-design-template-bd3bd4958353755bd39c54f95b6f7f0a_screen.jpg?ts=1646500087',
   'https://kxadmin.metroshoes.com/banner/1697712543STORY-OF-THE-MONTH_METRO-SHOES_DESKTOP-BANNER.jpg',
 ];
 
