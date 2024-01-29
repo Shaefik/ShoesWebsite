@@ -1,16 +1,6 @@
-
+ 
 import React,{useState} from 'react';
 import './App.css'
-// import Navbar from '../../my-app/src/Components/Navbar';
-// import Banner from '../../my-app/src/Components/Banner';
-// import Category from '../../my-app/src/Components/Category';
-// import Trending from '../../my-app/src/Components/Trending';
-
-// import Offers from '../../my-app/src/Components/Offers';
-// import Footer from '../../my-app/src/Components/Footer';
-
-// import Signup from '../../my-app/src/Components/Signup';
-// import Login from '../../my-app/src/Components/Login';
 import { productData } from './Assets/productData';
 import Navbar from './Components/Navbar';
 import Home from './Components/Home';
@@ -89,19 +79,10 @@ function App() {
   const [currentLogin, setCurrentLogin] = useState({});
   const [userNow,setUserNow] = useState(null)
   const [filtered, setFiltered] = useState(productData);
-
   const[storeEmail,setStoreEmail]= useState('')
   const [liked,setLiked] = useState([])
   const [editedProductDataState,setEditedProductDataState]= useState([])
   const [edited,setEdited] = useState(false)
-
-  
- 
-
-
-
-
-  
   return (
     <div className="app-container">
     
@@ -160,20 +141,9 @@ function App() {
           <Route path='/searchedproduct' Component={SearchedProduct} />   
           <Route path='/adminlogin' Component={AdminLogin} />     
           <Route path='/liked' Component={Liked} /> 
-
-
-          
         </Routes>
-
-
-      </MyContext.Provider>
-      
-        
-      
+      </MyContext.Provider>  
     </div>
-    
-      
-
     </div>
   );
 }
